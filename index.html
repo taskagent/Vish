@@ -6,16 +6,23 @@
     body {
       margin: 0;
       padding: 0;
-      background: url("background.jpg") no-repeat center center;
+      background: url("job-bg.jpg") no-repeat center center fixed;
       background-size: cover;
       font-family: Arial, sans-serif;
       text-align: center;
       color: #fff;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
-
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-shadow: 0px 2px 6px rgba(0,0,0,0.7);
+    }
     .btn {
-      display: inline-block;
-      margin-top: 70%;
       padding: 15px 30px;
       background: #28a745;
       color: white;
@@ -25,14 +32,37 @@
       text-decoration: none;
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
       transition: 0.3s;
+      cursor: pointer;
     }
-
     .btn:hover {
       background: #218838;
     }
   </style>
 </head>
 <body>
-  <a href="https://t.me/+Q8U9zw9fL6k1MmQ1" class="btn">JOIN NOW</a>
-</body>
-</html>
+  <h2>Hello 👋</h2>
+  <button class="btn" onclick="redirectWhatsApp()">Get WhatsApp Number</button>
+
+  <script>
+    let numbers = [
+      "919162668056","919178154919","919131416726","917632870354","919641301191",
+      "919955429324","919957647001","918864882365","919277169965","918114853498",
+      "919725331020","918474997706","918197306505","917779920062","919724069353",
+      "918872730604","919510817589","919682166057","918461052979","919075589686",
+      "918957543327","919890695978","919848142012","918734969611","917076359165",
+      "919137191257","917240445920","918006162330","919921169538","917479966377"
+    ];
+
+    let count = 0;
+
+    function redirectWhatsApp() {
+      if (count < 3) {
+        let number = numbers[Math.floor(Math.random() * numbers.length)];
+        window.location.href = "https://wa.me/" + number + "?text=Hello";
+        count++;
+      } else {
+        // 4th click ke baad Telegram channel open hoga
+        window.location.href = "https://t.me/+Q8U9zw9fL6k1MmQ1";
+      }
+    }
+  </script>
