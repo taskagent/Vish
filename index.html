@@ -1,29 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirect</title>
-    <script>
-        // List of random links
-        const randomLinks = [
-            "https://url10.top/b/YvxcXENj1555?fbclid=PAY2xjawIqKWFleHRuA2FlbQIxMAABpgVbZCL5eJlRp_oI0bLdKuL-vIdSeYZRIxhT250Vtm1GItQ7LnoAb9zjZA_aem_9IjFIH-n57EWKrwlcRJBKw", // Replace with your first link
-            "https://t.me/visalearning", // Replace with your second link
-            "https://url10.top/b/YvxcXENj1555?fbclid=PAY2xjawIqKWFleHRuA2FlbQIxMAABpgVbZCL5eJlRp_oI0bLdKuL-vIdSeYZRIxhT250Vtm1GItQ7LnoAb9zjZA_aem_9IjFIH-n57EWKrwlcRJBKw"  // Replace with your third link
-        ];
+  <title>WhatsApp + Telegram Redirect</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: #f9f9f9;
+    }
+    h2 {
+      color: #333;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background-color: #25D366; /* WhatsApp Green */
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #1ebe5d;
+    }
+    .btn img {
+      width: 24px;
+      height: 24px;
+    }
+    #countdownBox {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  </style>
+  <script>
+    var clickCount = 0;
+    var link = "";
+    var telegramLink = "https://t.me/+Q8U9zw9fL6k1MmQ1"; // <-- Aapka Telegram channel link
 
-        // Function to select a random link and redirect
-        function randomRedirect() {
-            const randomIndex = Math.floor(Math.random() * randomLinks.length); // Randomly select an index
-            const selectedLink = randomLinks[randomIndex]; // Get the link based on the random index
-            window.location.href = selectedLink; // Redirect to the selected link
+    function redirectWhatsApp() {
+      clickCount++;
+
+      // Agar 4th click hai to Telegram channel open ho
+      if (clickCount === 4) {
+        window.location.href = telegramLink;
+        return;
+      }
+
+      // Numbers ka array
+      var numbers = [
+        "919162668056",
+        "919178154919",
+        "919131416726",
+        "917632870354",
+        "919641301191",
+        "919955429324",
+        "919957647001",
+        "918864882365",
+        "919277169965",
+        "918114853498",
+        "919725331020",
+        "918474997706",
+        "918197306505",
+        "917779920062",
+        "919724069353",
+        "918872730604",
+        "919510817589",
+        "919682166057",
+        "918461052979",
+        "919075589686",
+        "918957543327",
+        "919890695978",
+        "919848142012",
+        "918734969611",
+        "917076359165",
+        "919137191257",
+        "919162668056",
+        "917240445920",
+        "918006162330",
+        "919921169538",
+        "917479966377"
+      ];
+
+      // Random number select
+      var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
+      var message = encodeURIComponent("Hello");
+      link = "https://wa.me/" + randomNum + "?text=" + message;
+
+      // Countdown show karo
+      var countdown = 3;
+      var countdownElement = document.getElementById("countdown");
+      document.getElementById("countdownBox").style.display = "block";
+
+      var timer = setInterval(function() {
+        countdownElement.innerText = countdown;
+        countdown--;
+
+        if (countdown < 0) {
+          clearInterval(timer);
+          window.location.href = link;
         }
-
-        // Call the randomRedirect function on page load
-        window.onload = randomRedirect;
-    </script>
+      }, 1000);
+    }
+  </script>
 </head>
 <body>
-    <!-- Body is empty; it will redirect automatically on page load -->
+  <h2>Click the button to redirect</h2>
+  <button class="btn" onclick="redirectWhatsApp()">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    Open WhatsApp
+  </button>
+
+  <div id="countdownBox" style="display:none;">
+    <p>Redirecting in <span id="countdown">3</span> seconds...</p>
+  </div>
 </body>
 </html>
