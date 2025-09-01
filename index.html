@@ -1,125 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WhatsApp + Telegram Redirect</title>
+  <title>Redirect Page</title>
   <style>
     body {
+      margin: 0;
+      padding: 0;
+      background: url("background.jpg") no-repeat center center;
+      background-size: cover;
       font-family: Arial, sans-serif;
       text-align: center;
-      margin-top: 100px;
-      background: #f9f9f9;
+      color: #fff;
     }
-    h2 {
-      color: #333;
-    }
+
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 20px;
-      padding: 12px 25px;
-      font-size: 18px;
-      font-weight: bold;
+      display: inline-block;
+      margin-top: 70%;
+      padding: 15px 30px;
+      background: #28a745;
       color: white;
-      background-color: #25D366; /* WhatsApp Green */
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-      cursor: pointer;
-    }
-    .btn:hover {
-      background-color: #1ebe5d;
-    }
-    .btn img {
-      width: 24px;
-      height: 24px;
-    }
-    #countdownBox {
-      margin-top: 20px;
       font-size: 20px;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #218838;
     }
   </style>
-  <script>
-    var clickCount = 0;
-    var link = "";
-    var telegramLink = "https://t.me/+Q8U9zw9fL6k1MmQ1"; // <-- Aapka Telegram channel link
-
-    function redirectWhatsApp() {
-      clickCount++;
-
-      // Agar 4th click hai to Telegram channel open ho
-      if (clickCount === 4) {
-        window.location.href = telegramLink;
-        return;
-      }
-
-      // Numbers ka array
-      var numbers = [
-        "919162668056",
-        "919178154919",
-        "919131416726",
-        "917632870354",
-        "919641301191",
-        "919955429324",
-        "919957647001",
-        "918864882365",
-        "919277169965",
-        "918114853498",
-        "919725331020",
-        "918474997706",
-        "918197306505",
-        "917779920062",
-        "919724069353",
-        "918872730604",
-        "919510817589",
-        "919682166057",
-        "918461052979",
-        "919075589686",
-        "918957543327",
-        "919890695978",
-        "919848142012",
-        "918734969611",
-        "917076359165",
-        "919137191257",
-        "919162668056",
-        "917240445920",
-        "918006162330",
-        "919921169538",
-        "917479966377"
-      ];
-
-      // Random number select
-      var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
-      var message = encodeURIComponent("Hello");
-      link = "https://wa.me/" + randomNum + "?text=" + message;
-
-      // Countdown show karo
-      var countdown = 3;
-      var countdownElement = document.getElementById("countdown");
-      document.getElementById("countdownBox").style.display = "block";
-
-      var timer = setInterval(function() {
-        countdownElement.innerText = countdown;
-        countdown--;
-
-        if (countdown < 0) {
-          clearInterval(timer);
-          window.location.href = link;
-        }
-      }, 1000);
-    }
-  </script>
 </head>
 <body>
-  <h2>Click the button to redirect</h2>
-  <button class="btn" onclick="redirectWhatsApp()">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    Open WhatsApp
-  </button>
-
-  <div id="countdownBox" style="display:none;">
-    <p>Redirecting in <span id="countdown">3</span> seconds...</p>
-  </div>
+  <a href="https://t.me/+Q8U9zw9fL6k1MmQ1" class="btn">JOIN NOW</a>
 </body>
 </html>
