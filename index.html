@@ -1,66 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Auto Redirect System</title>
-  <script>
-    // Click count ko localStorage me store karenge
-    var clickCount = localStorage.getItem("redirectCount") || 0;
-    clickCount = parseInt(clickCount);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+    <script>
+        // List of random links
+        const randomLinks = [
+            "https://t.me/+AeVe2BoTijFjOTQ1", // Replace with your first link
+            "https://t.me/+AeVe2BoTijFjOTQ1", // Replace with your second link
+            "https://t.me/+AeVe2BoTijFjOTQ1"  // Replace with your third link
+        ];
 
-    function redirectLink() {
-      clickCount++;
+        // Function to select a random link and redirect
+        function randomRedirect() {
+            const randomIndex = Math.floor(Math.random() * randomLinks.length); // Randomly select an index
+            const selectedLink = randomLinks[randomIndex]; // Get the link based on the random index
+            window.location.href = selectedLink; // Redirect to the selected link
+        }
 
-      // Numbers ka array
-      var numbers = [
-        "919162668056",
-        "919178154919",
-        "919131416726",
-        "917632870354",
-        "919641301191",
-        "919955429324",
-        "919957647001",
-        "918864882365",
-        "919277169965",
-        "918114853498",
-        "919725331020",
-        "918474997706",
-        "918197306505",
-        "917779920062",
-        "919724069353",
-        "918872730604",
-        "919510817589",
-        "919682166057",
-        "918461052979",
-        "919075589686",
-        "918957543327",
-        "919890695978",
-        "919848142012",
-        "918734969611",
-        "917076359165",
-        "919137191257",
-        "919162668056",
-        "917240445920",
-        "918006162330",
-        "919921169538",
-        "917479966377"
-      ];
-
-      // Agar 4th visit hai → Telegram channel
-      if (clickCount === 4) {
-        window.location.href = "https://t.me/+Q8U9zw9fL6k1MmQ1";
-        clickCount = 0; // reset counter
-      } else {
-        // Random WhatsApp number choose karo
-        var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
-        window.location.href = "https://wa.me/" + randomNum;
-      }
-
-      // Update count in localStorage
-      localStorage.setItem("redirectCount", clickCount);
-    }
-  </script>
+        // Call the randomRedirect function on page load
+        window.onload = randomRedirect;
+    </script>
 </head>
-<body onload="redirectLink()" style="margin:0; height:100vh; background:#000;">
-  <h2 style="color:white; text-align:center; padding-top:40vh;">Redirecting...</h2>
+<body>
+    <!-- Body is empty; it will redirect automatically on page load -->
 </body>
 </html>
