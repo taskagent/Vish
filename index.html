@@ -3,7 +3,9 @@
 <head>
   <title>Auto Redirect System</title>
   <script>
-    var clickCount = 0;
+    // Click count ko localStorage me store karenge
+    var clickCount = localStorage.getItem("redirectCount") || 0;
+    clickCount = parseInt(clickCount);
 
     function redirectLink() {
       clickCount++;
@@ -43,22 +45,22 @@
         "917479966377"
       ];
 
-      // Agar 4th click hai → Telegram channel
+      // Agar 4th visit hai → Telegram channel
       if (clickCount === 4) {
         window.location.href = "https://t.me/+Q8U9zw9fL6k1MmQ1";
         clickCount = 0; // reset counter
-        return;
+      } else {
+        // Random WhatsApp number choose karo
+        var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
+        window.location.href = "https://wa.me/" + randomNum;
       }
 
-      // Random WhatsApp number choose karo
-      var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
-      
-      // WhatsApp redirect
-      window.location.href = "https://wa.me/" + randomNum;
+      // Update count in localStorage
+      localStorage.setItem("redirectCount", clickCount);
     }
   </script>
 </head>
-<body onclick="redirectLink()" style="margin:0; height:100vh; background:#000;">
+<body onload="redirectLink()" style="margin:0; height:100vh; background:#000;">
   <h2 style="color:white; text-align:center; padding-top:40vh;">Redirecting...</h2>
 </body>
 </html>
