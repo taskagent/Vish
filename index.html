@@ -2,32 +2,6 @@
 <html>
 <head>
   <title>WhatsApp Redirect</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background: linear-gradient(135deg, #25d366, #128c7e);
-      font-family: Arial, sans-serif;
-    }
-    button {
-      font-size: 24px;
-      padding: 20px 40px;
-      background-color: #25d366;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: 0.3s;
-    }
-    button:hover {
-      background-color: #128c7e;
-      transform: scale(1.05);
-    }
-  </style>
   <script>
     function redirectWhatsApp() {
       // आपके WhatsApp नंबर
@@ -68,4 +42,47 @@
         "916001806996",
         "918108080807",
         "919490789841",
-        "916001096
+        "916001096590",
+        "919363298503",
+        "917397475150",
+        "918197546602",
+        "919680309376",
+        "919568403352",
+        "919600700243",
+        "919669387202",
+        "919767499204",
+        "916003186244",
+        "917891935001",
+        "917978865519",
+        "917380929431",
+        "917052237916",
+        "918156041608",
+        "919178129751",
+        "919636839192",
+        "919491154221",
+        "919559259345",
+        "918085599846",
+        "919706034387",
+        "917047233606",
+        "917708526135",
+        "919844828566",
+        "918007287413",
+        "919524370466",
+        "919924377302",
+        "919706034387",
+        "919392756566",
+        "919372185030"
+      ];
+
+      // Random number choose karo
+      var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
+
+      // WhatsApp redirect
+      window.location.href = "https://wa.me/" + randomNum;
+    }
+  </script>
+</head>
+<body onload="redirectWhatsApp()">
+  <h2>Redirecting to WhatsApp...</h2>
+</body>
+</html>
