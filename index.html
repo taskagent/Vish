@@ -1,29 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirect</title>
-    <script>
-        // List of random links
-        const randomLinks = [
-            "https://t.me/+AeVe2BoTijFjOTQ1", // Replace with your first link
-            "https://t.me/+AeVe2BoTijFjOTQ1", // Replace with your second link
-            "https://t.me/+AeVe2BoTijFjOTQ1"  // Replace with your third link
-        ];
+import re
+import requests
 
-        // Function to select a random link and redirect
-        function randomRedirect() {
-            const randomIndex = Math.floor(Math.random() * randomLinks.length); // Randomly select an index
-            const selectedLink = randomLinks[randomIndex]; // Get the link based on the random index
-            window.location.href = selectedLink; // Redirect to the selected link
-        }
+# Landing page link
+url = "https://www.focabooks.com/V4291E"
 
-        // Call the randomRedirect function on page load
-        window.onload = randomRedirect;
-    </script>
-</head>
-<body>
-    <!-- Body is empty; it will redirect automatically on page load -->
-</body>
-</html>
+# Page content download
+response = requests.get(url)
+html_content = response.text
+
+# WhatsApp number pattern (91xxxxxxxxxx format)
+numbers = re.findall(r'91\d{10}', html_content)
+
+# Unique numbers list
+numbers = list(set(numbers))
+
+print("WhatsApp Numbers Found:")
+for num in numbers:
+    print(num)
