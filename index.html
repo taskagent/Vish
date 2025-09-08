@@ -1,19 +1,6 @@
-import re
-import requests
-
-# Landing page link
-url = "https://www.focabooks.com/V4291E"
-
-# Page content download
-response = requests.get(url)
-html_content = response.text
-
-# WhatsApp number pattern (91xxxxxxxxxx format)
-numbers = re.findall(r'91\d{10}', html_content)
-
-# Unique numbers list
-numbers = list(set(numbers))
-
-print("WhatsApp Numbers Found:")
-for num in numbers:
-    print(num)
+let numbers = document.body.innerHTML.match(/91\d{10}/g);
+if(numbers){
+  console.log([...new Set(numbers)]);
+} else {
+  console.log("No numbers found");
+}
