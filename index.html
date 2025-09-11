@@ -1,68 +1,13 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>WhatsApp Redirect</title>
+  <title>Redirecting…</title>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Aapke diye hue WhatsApp numbers
-      const waNumbers = [
-        "916395922285",
-        "918821058322",
-        "918349727104",
-        "919235006564",
-        "917091632383",
-        "917078819891",
-        "919835571312",
-        "916395228291",
-        "917353079974",
-        "919546135982",
-        "919205943221",
-        "916299172712",
-        "919919432943",
-        "919456504275",
-        "919270175771",
-        "918005512961",
-        "918001810351",
-        "918249283770",
-        "917602712875",
-        "917837313045",
-        "919756414648",
-        "919026179847",
-        "919984013541",
-        "919369988693",
-        "919812354005",
-        "919861923243",
-        "918307117157",
-        "919265748423",
-        "918627926659",
-        "917470407049",
-        "917892220493"
-      ];
-
-      // Random number pick karo
-      const chosen = waNumbers[Math.floor(Math.random() * waNumbers.length)];
-      const waUrl = `https://wa.me/${chosen}`;
-
-      // Telegram fallback URL
-      const telegramUrl = "https://t.me/+bJCFqompdZIzYjQ1";
-
-      // Emoji + link for fallback
-      const fallbackHtml = `
-        <p>WhatsApp chat load nahi ho payi? <a id="fallback-link" href="${telegramUrl}" target="_blank">Click here to join Telegram</a></p>
-      `;
-
-      // Redirect ya fallback ka logic
-      window.location = waUrl;
-      
-      // Agar WhatsApp auto-redirect fail ho to fallback show karo
-      setTimeout(() => {
-        document.body.innerHTML = fallbackHtml;
-      }, 2000);
-    });
+    window.onload = function() {
+      window.location.href = "https://way09.top/j/mpDBXZSi0850?fbclid=PAdGRjcAMvApJleHRuA2FlbQEwAGFkaWQBqya48sKk_AGngZgyUp8gQ9EkQ9rFYGJfXnto51xybvAnB2hGIIKwC1sxjLk6Ls3vGKWzBKQ_aem_YaAUQUmpXkZBvFtBN6AGqQ#/";
+    };
   </script>
 </head>
 <body>
-  <p>Redirecting to WhatsApp—thoda hi intezaar kariye...</p>
 </body>
-  </html>
+</html>
