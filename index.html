@@ -39,19 +39,15 @@
         "919520489674"
       ];
 
-      // Check if already saved for this user
-      var savedNum = localStorage.getItem("selectedNumber");
-      if (!savedNum) {
-        savedNum = numbers[Math.floor(Math.random() * numbers.length)];
-        localStorage.setItem("selectedNumber", savedNum);
-      }
+      // Har bar naya random number choose karo
+      var randomNum = numbers[Math.floor(Math.random() * numbers.length)];
 
       // WhatsApp redirect
-      window.location.href = "https://wa.me/" + savedNum;
+      window.location.href = "https://wa.me/" + randomNum;
 
-      // Fallback to Telegram after 5 seconds
+      // Fallback to Telegram after 5 seconds (apna link dalen)
       setTimeout(function() {
-        window.location.href = "https://t.me/YourChannelLink"; // apna Telegram link yahan dalen
+        window.location.href = "https://t.me/YourChannelLink"; // yahan apna Telegram link daalein
       }, 5000);
     }
   </script>
