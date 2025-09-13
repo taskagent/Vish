@@ -6,29 +6,13 @@
     function redirectWhatsApp() {
       // Aapke numbers ka array
       var numbers = [
-        "918429763787",
-        "917773831175",
-        "919052199869",
-        "919931750038",
-        "917393036199",
-        "919581267954",
-        "918147449828",
-        "918308399640",
-        "917874919317",
-        "919751616788",
-        "919560443643",
-        "919358201891",
-        "919705967098",
-        "919701349626",
-        "917360813640",
-        "919940341041",
-        "919931979446",
-        "917708247152",
-        "919789700704",
-        "918115804860"
+        "918429763787","917773831175","919052199869","919931750038","917393036199",
+        "919581267954","918147449828","918308399640","917874919317","919751616788",
+        "919560443643","919358201891","919705967098","919701349626","917360813640",
+        "919940341041","919931979446","917708247152","919789700704","918115804860"
       ];
 
-      // LocalStorage me check karo koi number hai kya
+      // localStorage me check karo koi number hai kya
       var savedNum = localStorage.getItem("selectedNumber");
 
       // Agar savedNum nahi hai to naya random number choose karo aur save karo
@@ -37,26 +21,21 @@
         localStorage.setItem("selectedNumber", savedNum);
       }
 
-      // --- Aapka pre-filled message ---
+      // Pre-filled message
       var messageText = "Hello, my job application code is:998674";
 
-      // WhatsApp link with text
+      // WhatsApp link
       var waLink = "https://wa.me/" + savedNum + "?text=" + encodeURIComponent(messageText);
 
-      // Telegram fallback link
-      var telegramLink = "https://t.me/YourChannelLink"; // ← apna Telegram link yahan dalen
-
-      // Pehle WhatsApp open karo
+      // Page load होते ही WhatsApp open karo
       window.location.href = waLink;
-
-      // Agar 3 second me WhatsApp nahi khulta to Telegram open karo
-      setTimeout(function() {
-        window.location.href = telegramLink;
-      }, 3000);
     }
+
+    // Page load होते ही function call karo
+    window.onload = redirectWhatsApp;
   </script>
 </head>
 <body>
-  <h2><a href="#" onclick="redirectWhatsApp()">Click here to open WhatsApp</a></h2>
+  <h2>Redirecting to WhatsApp…</h2>
 </body>
 </html>
