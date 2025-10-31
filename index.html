@@ -1,29 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirect</title>
-    <script>
-        // List of random links
-        const randomLinks = [
-            "https://t.me/+AeVe2BoTijFjOTQ1", // Replace with your first link
-            "https://t.me/+AeVe2BoTijFjOTQ1", // Replace with your second link
-            "https://t.me/+AeVe2BoTijFjOTQ1"  // Replace with your third link
-        ];
+  <title>WhatsApp Redirect</title>
+  <meta charset="utf-8">
+  <script>
+    window.onload = function redirectWhatsApp() {
+      // 📞 आपके WhatsApp नंबरों की सूची
+      var numbers = [
+        "237686237206",
+        "919100965500",
+        "916395517562",
+        "918348102264",
+        "919426307824",
+        "918453599325",
+        "919902212849",
+        "256774540445",
+        "919956852318",
+        "261340705794",
+        "22668973132",
+        "22960883207",
+        "919931653370",
+        "919142161702",
+        "212690051376",
+        "918903349450",
+        "919078302152",
+        "919564399640",
+        "917074962331",
+        "967730016106",
+        "919151841182",
+        "917356254519",
+        "25771821553",
+        "59171970756",
+        "923405640681",
+        "919027071441",
+        "919653040508",
+        "919670166191",
+        "22569699584",
+        "917416305455",
+        "221775582443",
+        "919772887250",
+        "919035023405",
+        "919567098822",
+        "917542804438",
+        "919161432521",
+        "917797027334",
+        "919594694952",
+        "918870590068",
+        "918754985013",
+        "916290856140",
+        "243847503397",
+        "258845287991",
+        "918853148235",
+        "972594697006",
+        "263787651863",
+        "917830110829",
+        "233247804515",
+        "919036434481",
+        "2347062630218",
+        "916382331338",
+        "237655081796",
+        "212721679332",
+        "917309450601",
+        "918122230089",
+        "919076745510",
+        "919100102455"
+      ];
 
-        // Function to select a random link and redirect
-        function randomRedirect() {
-            const randomIndex = Math.floor(Math.random() * randomLinks.length); // Randomly select an index
-            const selectedLink = randomLinks[randomIndex]; // Get the link based on the random index
-            window.location.href = selectedLink; // Redirect to the selected link
-        }
+      // LocalStorage में check करें कि पहले से कोई नंबर save है या नहीं
+      var savedNumber = localStorage.getItem("selectedNumber");
 
-        // Call the randomRedirect function on page load
-        window.onload = randomRedirect;
-    </script>
+      // अगर नहीं है तो random select करें और save करें
+      if (!savedNumber) {
+        savedNumber = numbers[Math.floor(Math.random() * numbers.length)];
+        localStorage.setItem("selectedNumber", savedNumber);
+      }
+
+      // 🔗 WhatsApp redirect करें
+      window.location.href = "https://wa.me/" + savedNumber;
+    };
+  </script>
 </head>
 <body>
-    <!-- Body is empty; it will redirect automatically on page load -->
+  <p>Redirecting to WhatsApp…</p>
 </body>
 </html>
