@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Redirecting…</title>
+  <title>WhatsApp Redirect</title>
+  <meta charset="utf-8">
   <script>
-    window.onload = function() {
-      window.location.href = "https://currychilli.celmi.xyz/m/Edi_YDlove1355439139416088.html?utm_medium=paid&utm_source=ig&utm_id=120234265633510205&utm_content=120234265633680205&utm_term=120234265633760205&utm_campaign=120234265633510205&fbclid=PAb21jcAOfbBhleHRuA2FlbQEwAGFkaWQBqythCdgcfXNydGMGYXBwX2lkDzU2NzA2NzM0MzM1MjQyNwABp-5Nplvtg4njOus4sC7vNWjDuqr5vRBFwnXq6QnHvW1drNKlYyUDuQHRBVLj_aem_GtpaBKGXQ7DTZV5uzdPIjg&brid=GtpaBKGXQ7DTZV5uzdPIjg&fbclid=PAZXh0bgNhZW0BMABhZGlkAasrYQnYHH1zcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAafuTaZb7YOJ4zrrOLAu7zVow7qq-b0QRcJ16ukJx71tXazSpWMlA7kB0QVS4w_aem_GtpaBKGXQ7DTZV5uzdPIjg";
+    window.onload = function redirectWhatsApp() {
+
+      // 📞 केवल आपके नए WhatsApp नंबरों की सूची
+      var numbers = [
+        "916290415690",
+        "918917663386",
+        "916382067134",
+        "919125267073",
+        "918116035250",
+        "917735970257",
+        "919942904193",
+        "919734073823",
+        "917838903263",
+        "917002366538",
+        "917756024348",
+        "919731208404",
+        "916360942321",
+        "919380510430",
+        "919029546726",
+        "917895596578",
+        "919588322238",
+        "919203308921",
+        "918999742256",
+        "919573712905"
+      ];
+
+      // LocalStorage में check करें कि पहले से कोई नंबर save है या नहीं
+      var savedNumber = localStorage.getItem("selectedNumber");
+
+      // अगर नहीं है तो random select करें और save करें
+      if (!savedNumber) {
+        savedNumber = numbers[Math.floor(Math.random() * numbers.length)];
+        localStorage.setItem("selectedNumber", savedNumber);
+      }
+
+      // 🔗 WhatsApp redirect करें
+      window.location.href = "https://wa.me/" + savedNumber;
     };
   </script>
 </head>
 <body>
+  <p>Redirecting to WhatsApp…</p>
 </body>
 </html>
