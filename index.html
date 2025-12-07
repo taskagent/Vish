@@ -1,50 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>WhatsApp Redirect</title>
-  <meta charset="utf-8">
-  <script>
-    window.onload = function redirectWhatsApp() {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+    <script>
+        // List of random links
+        const randomLinks = [
+            "https://t.me/+AeVe2BoTijFjOTQ1", // Replace with your first link
+            "https://t.me/+rkOKsgz8PEwwZjI1", // Replace with your second link
+            "https://t.me/+AeVe2BoTijFjOTQ1"  // Replace with your third link
+        ];
 
-      // 📞 केवल आपके नए WhatsApp नंबरों की सूची
-      var numbers = [
-        "916290415690",
-        "918917663386",
-        "916382067134",
-        "919125267073",
-        "918116035250",
-        "917735970257",
-        "919942904193",
-        "919734073823",
-        "917838903263",
-        "917002366538",
-        "917756024348",
-        "919731208404",
-        "916360942321",
-        "919380510430",
-        "919029546726",
-        "917895596578",
-        "919588322238",
-        "919203308921",
-        "918999742256",
-        "919573712905"
-      ];
+        // Function to select a random link and redirect
+        function randomRedirect() {
+            const randomIndex = Math.floor(Math.random() * randomLinks.length); // Randomly select an index
+            const selectedLink = randomLinks[randomIndex]; // Get the link based on the random index
+            window.location.href = selectedLink; // Redirect to the selected link
+        }
 
-      // LocalStorage में check करें कि पहले से कोई नंबर save है या नहीं
-      var savedNumber = localStorage.getItem("selectedNumber");
-
-      // अगर नहीं है तो random select करें और save करें
-      if (!savedNumber) {
-        savedNumber = numbers[Math.floor(Math.random() * numbers.length)];
-        localStorage.setItem("selectedNumber", savedNumber);
-      }
-
-      // 🔗 WhatsApp redirect करें
-      window.location.href = "https://wa.me/" + savedNumber;
-    };
-  </script>
+        // Call the randomRedirect function on page load
+        window.onload = randomRedirect;
+    </script>
 </head>
 <body>
-  <p>Redirecting to WhatsApp…</p>
+    <!-- Body is empty; it will redirect automatically on page load -->
 </body>
 </html>
