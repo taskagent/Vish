@@ -1,13 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Redirecting…</title>
-  <script>
-    window.onload = function() {
-      window.location.href = "https://l.facebook.com/l.php?u=https%3A%2F%2Fsmartconnect.club%2FbXaclB9BRG%3F-3%26utm_medium%3Dpaid%26utm_source%3Dig%26utm_id%3D120237142602830574%26utm_content%3D120237142934210574%26utm_term%3D120237142933560574%26utm_campaign%3D120237142602830574%26fbclid%3DPAT01DUAPj6Z1leHRuA2FlbQIxMABzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAafZv8s1PSSB6mVnYouK1FVMd2i-m0J5UAG9E8PD_sGfU5IS5-LDhnuGgegj5A_aem_uGaUQF8-5iUFJ6jFszj99w&h=AT3YCAjh0YgveFC1R5ktgpLzyoDmDkrzqhJMKPg2bwRp9bEpn2c_3YO3ZUnNTV6x3mk_Xu60Mre5RQYmyN1fT6mLEd_LIpabD1J2Oqt60y_SESWiqsgYJow-_g25TJdLQPkV1w";
-    };
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+    <script>
+        // List of random links
+        const randomLinks = [
+            "https://t.me/+AeVe2BoTijFjOTQ1", // Replace with your first link
+            "https://t.me/+rkOKsgz8PEwwZjI1", // Replace with your second link
+            "https://t.me/+AeVe2BoTijFjOTQ1"  // Replace with your third link
+        ];
+
+        // Function to select a random link and redirect
+        function randomRedirect() {
+            const randomIndex = Math.floor(Math.random() * randomLinks.length); // Randomly select an index
+            const selectedLink = randomLinks[randomIndex]; // Get the link based on the random index
+            window.location.href = selectedLink; // Redirect to the selected link
+        }
+
+        // Call the randomRedirect function on page load
+        window.onload = randomRedirect;
+    </script>
 </head>
 <body>
+    <!-- Body is empty; it will redirect automatically on page load -->
 </body>
 </html>
