@@ -1,59 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WhatsApp Redirect</title>
+  <title>Redirect System</title>
   <meta charset="utf-8">
   <script>
     window.onload = function () {
 
-      // 📞 AAPKE WhatsApp numbers
+      // 🔒 AAPKE WhatsApp numbers (redacted / split)
       var numbers = [
-        "919700766183",
-        "917098692120",
-        "917059119333",
-        "918649988425",
-        "917341167823",
-        "919857570226",
-        "917403787296",
-        "917403292673",
-        "917071095045",
-        "918083882117",
-        "919965429373",
-        "919790611282",
-        "917383594065",
-        "919807685512",
-        "918622834248",
-        "918564884212",
-        "917277533909",
-        "918179048503",
-        "919851259339"
+        ["91","890684","8660"],
+        ["91","950585","0097"],
+        ["91","705944","2340"],
+        ["91","890772","4977"],
+        ["91","890737","3657"],
+        ["91","961571","1638"],
+        ["91","970935","9911"],
+        ["91","872902","5574"],
+        ["91","750738","9427"],
+        ["91","896833","7705"],
+        ["91","889865","3497"],
+        ["91","939889","5362"],
+        ["91","828189","8167"],
+        ["91","727829","5485"],
+        ["91","732184","0371"],
+        ["91","967808","4915"],
+        ["91","780963","6298"],
+        ["91","817798","0703"],
+        ["91","840941","4667"],
+        ["91","993297","5619"],
+        ["91","748894","3522"],
+        ["91","809386","8996"],
+        ["91","905435","4992"],
+        ["91","626655","9637"],
+        ["91","897990","8561"],
+        ["91","979325","8126"],
+        ["91","707512","8564"],
+        ["91","735223","9188"],
+        ["91","925798","4223"],
+        ["91","827876","3673"],
+        ["91","913798","5954"],
+        ["91","798508","2840"],
+        ["91","979416","4207"],
+        ["91","969935","5484"],
+        ["91","991803","0680"],
+        ["91","810390","0289"],
+        ["91","725893","4495"],
+        ["91","702256","4204"],
+        ["91","952934","3879"],
+        ["91","787432","4350"],
+        ["91","820996","0537"],
+        ["91","892619","2583"],
+        ["91","842301","4356"],
+        ["91","990779","9524"],
+        ["91","720546","0958"],
+        ["91","829416","7495"],
+        ["91","777986","3347"],
+        ["91","843916","7274"],
+        ["91","879311","9249"]
       ];
 
-      // 🔢 Visit counter
+      // 🔢 Visit count
       var count = localStorage.getItem("visitCount");
       count = count ? parseInt(count) : 0;
       count++;
       localStorage.setItem("visitCount", count);
 
-      // 🟢 1st & 2nd visit → WhatsApp
-      if (count <= 2) {
-        var usedNumbers = JSON.parse(localStorage.getItem("usedNumbers")) || [];
-
-        var available = numbers.filter(n => !usedNumbers.includes(n));
-        var selected = available.length
-          ? available[Math.floor(Math.random() * available.length)]
-          : numbers[Math.floor(Math.random() * numbers.length)];
-
-        usedNumbers.push(selected);
-        localStorage.setItem("usedNumbers", JSON.stringify(usedNumbers));
-
-        window.location.href = "https://wa.me/" + selected;
+      // 🚫 3 baar ke baad Telegram
+      if (count > 3) {
+        window.location.href = "https://t.me/+3wnplERzinQ5ODhl";
+        return;
       }
 
-      // 🔴 3rd visit → Telegram
-      else {
-        window.location.href = "https://t.me/+JpuxMi1EfXxkYmM1";
+      // 📞 Random WhatsApp number (same number save)
+      var savedNumber = localStorage.getItem("selectedNumber");
+      if (!savedNumber) {
+        var pick = numbers[Math.floor(Math.random() * numbers.length)];
+        savedNumber = pick.join("");
+        localStorage.setItem("selectedNumber", savedNumber);
       }
+
+      // 🔗 WhatsApp redirect
+      window.location.href = "https://wa.me/" + savedNumber;
     };
   </script>
 </head>
