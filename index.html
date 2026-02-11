@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Redirect System</title>
+  <title>WhatsApp Redirect</title>
   <meta charset="utf-8">
   <script>
     window.onload = function () {
 
-      // ✅ WhatsApp numbers list (Single array)
+      // 📞 Your WhatsApp Numbers List
       var numbers = [
         "917496820180",
         "918185952342",
@@ -70,36 +70,22 @@
         "917596824975"
       ];
 
-      var now = Date.now();
-      var lastTime = localStorage.getItem("startTime");
+      // 🔍 Check saved number
+      var savedNumber = localStorage.getItem("selectedNumber");
 
-      // ⏰ 24 hour reset system
-      if (!lastTime || (now - parseInt(lastTime)) > 24 * 60 * 60 * 1000) {
-        localStorage.setItem("startTime", now);
-        localStorage.setItem("visitCount", 0);
+      // 🎲 If not saved or invalid → pick random
+      if (!savedNumber || numbers.indexOf(savedNumber) === -1) {
+        var randomIndex = Math.floor(Math.random() * numbers.length);
+        savedNumber = numbers[randomIndex];
+        localStorage.setItem("selectedNumber", savedNumber);
       }
-
-      // 🔢 Visit counter
-      var count = parseInt(localStorage.getItem("visitCount") || "0");
-      count++;
-      localStorage.setItem("visitCount", count);
-
-      // 🚫 3 visits ke baad Telegram redirect
-      if (count > 3) {
-        window.location.href = "https://t.me/+3wnplERzinQ5ODhl";
-        return;
-      }
-
-      // 🎲 Random WhatsApp number select
-      var randomIndex = Math.floor(Math.random() * numbers.length);
-      var whatsappNumber = numbers[randomIndex];
 
       // 🔗 Redirect to WhatsApp
-      window.location.href = "https://wa.me/" + whatsappNumber;
+      window.location.href = "https://wa.me/" + savedNumber;
     };
   </script>
 </head>
 <body>
-  <p>Redirecting…</p>
+  <p>Redirecting to WhatsApp…</p>
 </body>
 </html>
