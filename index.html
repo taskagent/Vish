@@ -3,72 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Work From Home Popup</title>
+<title>Work From Home</title>
 
 <style>
-.popup-overlay {
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Full Page Container */
+.fullpage-popup {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9800, #ff5722);
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  color: #fff;
   z-index: 9999;
 }
 
-.popup-box {
-  width: 350px;
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  animation: fadeIn 0.4s ease-in-out;
-  font-family: Arial, sans-serif;
-  position: relative;
+/* Content Box */
+.content-box {
+  width: 90%;
+  max-width: 500px;
+  background: #ffffff;
+  color: #333;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.popup-header {
-  background: #ff9800;
-  color: #000;
-  text-align: center;
-  padding: 12px;
-  font-size: 20px;
-  font-weight: bold;
+.content-box h1 {
+  margin-top: 0;
+  font-size: 26px;
+  color: #ff5722;
 }
 
-.popup-content {
-  padding: 20px;
-  text-align: center;
-}
-
-.popup-content h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.popup-content p {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 15px;
+.content-box p {
+  font-size: 15px;
+  margin: 15px 0;
 }
 
 .highlight {
-  color: #ff9800;
   font-weight: bold;
-  font-size: 16px;
+  color: #ff9800;
+  font-size: 18px;
 }
 
+/* Buttons */
 .btn {
   display: block;
   width: 100%;
-  padding: 12px;
-  margin-top: 10px;
+  padding: 14px;
+  margin-top: 15px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  text-align: center;
   transition: 0.3s;
 }
 
@@ -86,38 +81,30 @@
   opacity: 0.8;
 }
 
+/* Close Button */
 .close-btn {
   position: absolute;
-  top: 8px;
-  right: 15px;
-  font-size: 22px;
+  top: 15px;
+  right: 25px;
+  font-size: 28px;
   cursor: pointer;
   color: #fff;
-}
-
-@keyframes fadeIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="popup-overlay" id="popup">
-  <div class="popup-box">
-    <div class="popup-header">
-      Work From Home
-      <span class="close-btn" onclick="closePopup()">×</span>
-    </div>
-    <div class="popup-content">
-      <h2>An Opportunity To Earn Money From Home</h2>
-      <p>We're hiring online assistants in a wide range. Work easily from home.</p>
-      <p class="highlight">Earn up to ₹5000 per day! (Age 26+)</p>
+<div class="fullpage-popup" id="popup">
+  <span class="close-btn" onclick="closePopup()">×</span>
+  
+  <div class="content-box">
+    <h1>Work From Home Opportunity</h1>
+    <p>We’re hiring online assistants in various categories. Work easily from home.</p>
+    <p class="highlight">Earn up to ₹5000 per day! (Age 26+)</p>
 
-      <a href="https://wa.me/your-number" class="btn whatsapp-btn">JOIN WHATSAPP</a>
-      <a href="#" class="btn contact-btn">Contact Us →</a>
-    </div>
+    <a href="https://wa.me/your-number" class="btn whatsapp-btn">JOIN WHATSAPP</a>
+    <a href="#" class="btn contact-btn">Contact Us →</a>
   </div>
 </div>
 
