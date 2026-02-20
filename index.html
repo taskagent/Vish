@@ -6,7 +6,6 @@
 <title>Work From Home Popup</title>
 
 <style>
-/* Overlay Background */
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -20,7 +19,6 @@
   z-index: 9999;
 }
 
-/* Popup Box */
 .popup-box {
   width: 350px;
   background: #fff;
@@ -28,9 +26,9 @@
   overflow: hidden;
   animation: fadeIn 0.4s ease-in-out;
   font-family: Arial, sans-serif;
+  position: relative;
 }
 
-/* Header */
 .popup-header {
   background: #ff9800;
   color: #000;
@@ -40,7 +38,6 @@
   font-weight: bold;
 }
 
-/* Content */
 .popup-content {
   padding: 20px;
   text-align: center;
@@ -57,14 +54,12 @@
   margin-bottom: 15px;
 }
 
-/* Highlight Text */
 .highlight {
   color: #ff9800;
   font-weight: bold;
   font-size: 16px;
 }
 
-/* Buttons */
 .btn {
   display: block;
   width: 100%;
@@ -91,34 +86,25 @@
   opacity: 0.8;
 }
 
-/* Close Button */
 .close-btn {
   position: absolute;
-  top: 10px;
+  top: 8px;
   right: 15px;
   font-size: 22px;
   cursor: pointer;
   color: #fff;
 }
 
-/* Animation */
 @keyframes fadeIn {
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
-}
-
-/* Hide by default */
-.hidden {
-  display: none;
 }
 </style>
 </head>
 
 <body>
 
-<button onclick="openPopup()">Open Popup</button>
-
-<div class="popup-overlay hidden" id="popup">
+<div class="popup-overlay" id="popup">
   <div class="popup-box">
     <div class="popup-header">
       Work From Home
@@ -136,19 +122,10 @@
 </div>
 
 <script>
-function openPopup(){
-  document.getElementById("popup").classList.remove("hidden");
-}
-
 function closePopup(){
-  document.getElementById("popup").classList.add("hidden");
+  document.getElementById("popup").style.display = "none";
 }
-
-/* Auto open after 2 seconds */
-setTimeout(function(){
-  openPopup();
-},2000);
 </script>
 
 </body>
-    </html>
+</html>
