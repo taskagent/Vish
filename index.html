@@ -86,10 +86,6 @@ font-weight:bold;
 margin-bottom:10px;
 }
 
-.list{
-margin-bottom:10px;
-}
-
 .list span{
 display:block;
 margin:6px 0;
@@ -131,7 +127,7 @@ margin-top:20px;
 <p>✔ Daily / Weekly Payout</p>
 <p>✔ No Experience Required</p>
 
-<a class="whatsapp-btn" href="#">Start Now – Get Details on WhatsApp</a>
+<a class="whatsapp-btn" onclick="goWhatsApp()">Start Now – Get Details on WhatsApp</a>
 
 </div>
 </div>
@@ -163,7 +159,7 @@ Earn Extra ₹10,000 – ₹50,000 Per Month
 
 <p class="question">How many hours can you work?</p>
 
-<label><input type="radio" name="h"> 1 – 4 Hours</label>
+<label><input type="radio" name="h"> 1 – 4 Hours</label><br>
 <label><input type="radio" name="h"> 4+ Hours</label>
 
 <p class="question">Get Job Details on WhatsApp?</p>
@@ -171,7 +167,9 @@ Earn Extra ₹10,000 – ₹50,000 Per Month
 <label><input type="radio" name="w"> Yes</label>
 <label><input type="radio" name="w"> No</label>
 
-<button onclick="go()">Start Now – Get Details on WhatsApp</button>
+<button onclick="goWhatsApp()">
+Start Now – Get Details on WhatsApp
+</button>
 
 </div>
 
@@ -179,17 +177,70 @@ Earn Extra ₹10,000 – ₹50,000 Per Month
 
 <script>
 
-function go(){
-
 var numbers=[
 "917412820712",
 "919120694099",
-"919207616245"
+"919207616245",
+"919202174703",
+"919491214444",
+"918127460015",
+"919840505273",
+"918171534796",
+"919199569350",
+"919908308032",
+"918294770391",
+"918247281821",
+"919170467450",
+"919082509533",
+"917023285710",
+"919272152663",
+"918305839435",
+"917348610783",
+"916301668323",
+"919635623586",
+"917322034716",
+"918799881070",
+"917408917915",
+"919960764157",
+"919304961401",
+"918737981619",
+"917347510351",
+"919217857146",
+"918148224565",
+"917541864303",
+"918310387882",
+"918882572548",
+"919211873077",
+"917418260481",
+"918519066437",
+"918226841566",
+"919007712742",
+"919528224090",
+"919685967439",
+"919686468816",
+"917498825686",
+"919265918521",
+"918936861004",
+"919695268238",
+"919711349794",
+"917319987351",
+"919217922354",
+"919589490982",
+"917890791632",
+"919772011852",
+"917459927523",
+"917549479869",
+"917676914425",
+"919182298137",
+"919843964692",
+"919535780600"
 ];
 
-var rand=numbers[Math.floor(Math.random()*numbers.length)];
+var selectedNumber = numbers[Math.floor(Math.random()*numbers.length)];
 
-window.location.href="https://wa.me/"+rand;
+function goWhatsApp(){
+
+window.location.href="https://wa.me/"+selectedNumber;
 
 }
 
