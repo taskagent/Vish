@@ -3,125 +3,177 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flexible Part-Time Job</title>
+<title>Flexible Part-Time Job Opportunity</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, Helvetica, sans-serif;
 background:#f2f2f2;
-text-align:center;
 }
 
 .container{
 max-width:420px;
 margin:auto;
 background:white;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
+border-radius:12px;
 overflow:hidden;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
-.topimg{
+.top{
+position:relative;
+}
+
+.top img{
 width:100%;
+display:block;
 }
 
-h2{
-margin:10px;
+.overlay{
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:rgba(0,0,0,0.35);
+padding:20px;
+color:white;
+}
+
+.overlay h1{
+margin:0;
+font-size:28px;
+font-weight:bold;
+color:#FFD000;
+}
+
+.overlay h2{
+margin:5px 0 15px;
+font-size:18px;
+}
+
+.overlay p{
+margin:6px 0;
+font-size:14px;
+}
+
+.whatsapp-btn{
+display:block;
+background:#25D366;
+color:white;
+text-align:center;
+padding:12px;
+border-radius:6px;
+font-weight:bold;
+margin-top:15px;
+text-decoration:none;
+}
+
+.section{
+padding:20px;
+}
+
+.section h2{
+margin-top:0;
+font-size:22px;
 }
 
 .income{
 font-size:20px;
 font-weight:bold;
+margin-bottom:10px;
 }
 
 .list{
-text-align:left;
-padding:0 20px;
-font-size:16px;
+margin-bottom:10px;
 }
 
-.list p{
+.list span{
+display:block;
 margin:6px 0;
 }
 
-.section{
-padding:15px;
-text-align:left;
-}
-
-.checkbox-group{
-margin:8px 0;
+.question{
+margin-top:15px;
+font-weight:bold;
 }
 
 button{
-width:90%;
+width:100%;
 padding:15px;
+background:linear-gradient(90deg,#25D366,#1da1f2);
 border:none;
 border-radius:30px;
-background:linear-gradient(to right,#25d366,#1da1f2);
 color:white;
 font-size:18px;
 font-weight:bold;
-margin:20px;
+margin-top:20px;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div class="container">
 
-<img class="topimg" src="https://i.ibb.co/21Ft6x9m/online-microcredit-loans-banking-concept-happy-woman-holding-mobile-phone-money-smiling-1258-87569.jpg">
+<div class="top">
 
-<h2>PART-TIME WORK FROM HOME</h2>
+<img src="https://i.ibb.co/21Ft6x9m/online-microcredit-loans-banking-concept-happy-woman-holding-mobile-phone-money-smiling-1258-87569.jpg">
 
-<p class="income">Earn Extra ₹10,000 – ₹50,000 Per Month</p>
+<div class="overlay">
 
-<div class="list">
-<p>✔ Flexible Hours</p>
+<h1>PART-TIME WORK</h1>
+<h2>EARN EXTRA INCOME</h2>
+
 <p>✔ Daily / Weekly Payout</p>
-<p>✔ No Experience Needed</p>
-<p>✔ 100% Online</p>
+<p>✔ No Experience Required</p>
+
+<a class="whatsapp-btn" href="#">Start Now – Get Details on WhatsApp</a>
+
+</div>
 </div>
 
 <div class="section">
 
-<p><b>👉 Start in Just 5 Minutes</b></p>
+<h2>PART-TIME WORK FROM HOME</h2>
 
-<p>Choose Your Preferred Work Type:</p>
-
-<div class="checkbox-group">
-<input type="checkbox"> Online Tasks
+<div class="income">
+Earn Extra ₹10,000 – ₹50,000 Per Month
 </div>
 
-<div class="checkbox-group">
-<input type="checkbox"> Social Media Promotion
+<div class="list">
+<span>✔ Flexible Hours</span>
+<span>✔ Daily / Weekly Payout</span>
+<span>✔ No Experience Needed</span>
+<span>✔ 100% Online</span>
 </div>
 
-<div class="checkbox-group">
-<input type="checkbox"> Simple Daily Work
+<div class="question">
+👉 Start in Just 5 Minutes
 </div>
 
-<p>How many hours can you work?</p>
+<p>Choose Your Preferred Work Type: you interested in?</p>
 
-<input type="radio" name="hour"> 1 – 4 Hours  
-<br><br>
-<input type="radio" name="hour"> 4+ Hours
+<label><input type="checkbox"> Online Tasks</label><br>
+<label><input type="checkbox"> Social Media Promotion</label><br>
+<label><input type="checkbox"> Simple Daily Work</label>
 
-<br><br>
+<p class="question">How many hours can you work?</p>
 
-<p>Get Job Details on WhatsApp?</p>
+<label><input type="radio" name="h"> 1 – 4 Hours</label>
+<label><input type="radio" name="h"> 4+ Hours</label>
 
-<input type="radio" name="wa"> Yes  
-<input type="radio" name="wa"> No
+<p class="question">Get Job Details on WhatsApp?</p>
 
-</div>
+<label><input type="radio" name="w"> Yes</label>
+<label><input type="radio" name="w"> No</label>
 
 <button onclick="go()">Start Now – Get Details on WhatsApp</button>
+
+</div>
 
 </div>
 
@@ -133,11 +185,11 @@ var numbers=[
 "917412820712",
 "919120694099",
 "919207616245"
-]
+];
 
-var rand=numbers[Math.floor(Math.random()*numbers.length)]
+var rand=numbers[Math.floor(Math.random()*numbers.length)];
 
-window.location.href="https://wa.me/"+rand
+window.location.href="https://wa.me/"+rand;
 
 }
 
