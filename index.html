@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+left:0;
+right:0;<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -34,8 +35,7 @@ display:block;
 .overlay{
 position:absolute;
 top:0;
-left:0;
-right:0;
+
 bottom:0;
 background:rgba(0,0,0,0.35);
 padding:20px;
@@ -172,61 +172,162 @@ Earn ₹5,000 – ₹15,000 Per Month
 <p class="question">Get Job Details on WhatsApp?</p>
 
 <label><input type="radio" name="w"> Yes</label>
-<label><input type="radio" name="w"> No</label>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Channels</title>
 
-</div>
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    background: #0f172a;
+    color: white;
+}
 
+.container {
+    margin-top: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 90%;
+    margin: auto;
+}
+
+.btn {
+    padding: 15px;
+    font-size: 16px;
+    background: #0088cc;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn.joined {
+    background: #facc15;
+    color: black;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+    width: 90%;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.whatsapp-btn:disabled {
+    background: gray;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Join All Telegram Channels</h2>
+
+    <div class="grid">
+        <button class="btn" onclick="joinChannel(this,0,'https://t.me/+IN25AiVSQFBhN2Y9')">Channel 1</button>
+        <button class="btn" onclick="joinChannel(this,1,'https://t.me/+mNbBfBPaTQQ2ZjI1')">Channel 2</button>
+    </div>
+
+    <button id="finalBtn" class="whatsapp-btn" disabled onclick="openWhatsApp()">
+        Then Get Agent
+    </button>
 </div>
 
 <script>
+let joined = [false, false];
 
-var numbers = [
-"918171091621",
-"919560196313",
-"919928746641",
-"919467305073",
-"916002319152",
-"916002715015",
-"919695927016",
-"916003607925",
-"917046144376",
-"919507718053",
-"919172740674",
-"918953864240",
-"917757064968",
-"917896669340",
-"918978678364",
-"916002704935",
-"918468803687",
-"917002198526",
-"917099524285",
-"919617869684",
-"918178124511",
-"919356783098",
-"917368855912",
-"919696162224",
-"919961411793",
-"917289042458",
-"917638949123",
-"917203911242",
-"919843065841",
-"919754784148",
-"917063913975",
-"917458910782",
-"918369934097",
-"919008318992",
-"919956162228",
-"918279528784",
-"917277491862"
+// 🔥 Number list
+let numbers = [
+  "918618266539",
+  "918618993018",
+  "917652881892",
+  "917702871303",
+  "919685533248",
+  "919171802507",
+  "918179426831",
+  "919948285455",
+  "917845316001",
+  "919972417610",
+  "917820893472",
+  "919536478092",
+  "917207246282",
+  "918809946089",
+  "919145872596",
+  "919219856720",
+  "916370509649",
+  "919900623301",
+  "919980174037",
+  "918257971236",
+  "919829043790",
+  "916002724150",
+  "919063438725",
+  "919916300714",
+  "918015608895",
+  "918539833291",
+  "916002710843",
+  "919060742617",
+  "917641921434",
+  "917899118063",
+  "918817573895",
+  "916002703147",
+  "917305253396",
+  "919893609208",
+  "919632856442",
+  "917030279309",
+  "918529343562",
+  "917799461825",
+  "917795956002",
+  "917993275254",
+  "919771713123",
+  "919559218561",
+  "917651929851",
+  "917879840262",
+  "919987807012",
+  "919912887781",
+  "918353964775",
+  "918509786899"
 ];
 
-var selectedNumber = numbers[Math.floor(Math.random() * numbers.length)];
+function joinChannel(btn, index, link) {
+    window.open(link, "_blank");
 
-function goWhatsApp(){
-var message = "Hello, I am interested in this part-time job. Please share details.";
-window.location.href = "https://wa.me/" + selectedNumber + "?text=" + encodeURIComponent(message);
+    if (!joined[index]) {
+        joined[index] = true;
+        btn.classList.add("joined");
+        btn.innerText = "Joined ✅";
+        checkAllJoined();
+    }
 }
 
+function checkAllJoined() {
+    if (joined.every(v => v === true)) {
+        document.getElementById("finalBtn").disabled = false;
+    }
+}
+
+// 🎯 RANDOM + AUTO MESSAGE
+function openWhatsApp() {
+    let randomIndex = Math.floor(Math.random() * numbers.length);
+    let selectedNumber = numbers[randomIndex];
+
+    let message = "hello"; // ✅ tumhara fixed message
+    let url = "https://wa.me/" + selectedNumber + "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
 </script>
 
 </body>
