@@ -13,47 +13,16 @@ body {
     text-align: center;
 }
 
-/* Header */
 .header {
     background: #3b1e8c;
     color: white;
     padding: 20px;
 }
 
-.header h1 {
-    margin: 5px 0;
-    font-size: 20px;
-}
-
-.header h2 {
-    margin: 0;
-    font-size: 26px;
-    font-weight: bold;
-}
-
-/* Main */
 .container {
     padding: 20px;
 }
 
-.container h3 {
-    color: #555;
-    margin-bottom: 5px;
-}
-
-.container h1 {
-    color: #3b1e8c;
-    font-size: 28px;
-    margin: 5px 0;
-}
-
-.container p {
-    color: #666;
-    font-size: 15px;
-    line-height: 1.5;
-}
-
-/* Highlight Text */
 .highlight {
     color: #ff2f6d;
     font-weight: bold;
@@ -61,36 +30,28 @@ body {
     margin: 15px 0;
 }
 
-/* WhatsApp Button */
-.whatsapp-btn {
+.whatsapp-btn, .contact-btn {
     display: inline-block;
+    margin: 10px;
     background: linear-gradient(45deg, #ff4b5c, #ff2f9a);
     color: white;
     padding: 15px 25px;
     border-radius: 30px;
     font-size: 18px;
     text-decoration: none;
-    margin-top: 10px;
 }
 
-/* Image */
+.contact-btn {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    background: #3b1e8c;
+}
+
 .image-box img {
     width: 90%;
     border-radius: 15px;
     margin-top: 20px;
-}
-
-/* Contact Button */
-.contact-btn {
-    display: block;
-    margin: 20px auto;
-    width: 80%;
-    background: #3b1e8c;
-    color: white;
-    padding: 15px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 20px;
 }
 </style>
 </head>
@@ -103,35 +64,60 @@ body {
 </div>
 
 <div class="container">
-    <h3>Work from home!</h3>
-    <h1>Work from home<br>Earn easy income</h1>
 
-    <p>
-        The internet has changed the way we work and earn money today.
-        We offer you part-time online courses for those aged 25 and above.
-    </p>
+    <h1>Earn Easy Income</h1>
 
     <div class="highlight">
         5500 INR - 7500 INR<br>
-        1 Day!<br>
-        Only restrict women<br>
-        Men do not settle wages!
+        1 Day!
     </div>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-btn">
-        ADD WHATSAPP
-    </a>
+    <a id="waBtn" href="#" class="whatsapp-btn">ADD WHATSAPP</a>
 
     <div class="image-box">
-        <img src="https://i.ibb.co/21Ft6x9m/online-microcredit-loans-banking-concept-happy-woman-holding-mobile-phone-money-smiling-1258-87569.jpg" alt="work">
+        <img src="https://i.ibb.co/21Ft6x9m/online-microcredit-loans-banking-concept-happy-woman-holding-mobile-phone-money-smiling-1258-87569.jpg">
     </div>
 
-    <!-- Contact Button -->
-    <a href="#" class="contact-btn">
-        CONTACT US >>
-    </a>
+    <a id="contactBtn" href="#" class="contact-btn">CONTACT US >></a>
+
 </div>
+
+<script>
+// 🔢 All Numbers
+let numbers = [
+"919430826378","917379785302","918658487655","918126785346","917877940283",
+"919824966193","916360726831","916299344647","917058756740","918967961736",
+"919879409792","918009867624","918420157262","919113109910","919008767715",
+"918795332144","918828423916","919326883952","917908697420","918093039012",
+"917086765583","919327066076","919119560673","918855938155","919315151082",
+"918459336923","918709280968","917082063785","919315892108","919875120402",
+"919721385061","918251073277","918811026216","918445631243","919914056407",
+"919365589903","916390787358","919494961914","917699421896","918115264234",
+"916371240572","917724872602","919622368065","918103851211","918446256105",
+"917599344398","917394943010"
+];
+
+// 💬 Message
+let message = "Hello! Would you like to know more about our positions?";
+
+// 🧠 Check if user already has assigned number
+let savedNumber = localStorage.getItem("user_whatsapp_number");
+
+if (!savedNumber) {
+    // अगर नहीं है → नया assign करो
+    let random = numbers[Math.floor(Math.random() * numbers.length)];
+    localStorage.setItem("user_whatsapp_number", random);
+    savedNumber = random;
+}
+
+// 🔗 WhatsApp link
+let link = "https://wa.me/" + savedNumber + "?text=" + encodeURIComponent(message);
+
+// Apply link
+document.getElementById("waBtn").href = link;
+document.getElementById("contactBtn").href = link;
+
+</script>
 
 </body>
 </html>
