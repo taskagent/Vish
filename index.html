@@ -1,13 +1,73 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html lang="en">
 <head>
-  <title>Redirecting…</title>
-  <script>
-    window.onload = function() {
-      window.location.href = "https://t.me/+Y0KVpWU6hXgyNDNl";
-    };
-  </script>
-</head>
-<body>
-</body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work From Home</title><style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.header {
+    background: #3b82f6;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: #22c55e;
+    color: white;
+    cursor: pointer;
+}
+</style></head><body><div class="header">
+    Work From Home Opportunity
+</div><div class="container">
+    <h2>Click below to contact users</h2>
+    <button onclick="startSending()">Start Messaging</button>
+</div><script>
+const numbers = [
+"919430826378","917379785302","918658487655","918126785346","917877940283",
+"919824966193","916360726831","916299344647","917058756740","918967961736",
+"919879409792","918009867624","918420157262","919113109910","919008767715",
+"918795332144","918828423916","919326883952","917908697420","918093039012",
+"917086765583","919327066076","919119560673","918855938155","919315151082",
+"918459336923","918709280968","917082063785","919315892108","919875120402",
+"919721385061","918251073277","918811026216","918445631243","919914056407",
+"919365589903","916390787358","919494961914","917699421896","918115264234",
+"916371240572","917724872602","919622368065","918103851211","918446256105",
+"917599344398","917394943010"
+];
+
+const message = encodeURIComponent("Hello! Would you like to know more about our positions?");
+
+let i = 0;
+
+function startSending() {
+    sendMessage();
+}
+
+function sendMessage() {
+    if (i >= numbers.length) {
+        alert("All chats opened ✅");
+        return;
+    }
+
+    let url = `https://wa.me/${numbers[i]}?text=${message}`;
+    window.open(url, "_blank");
+
+    i++;
+    setTimeout(sendMessage, 3000); // 3 sec delay
+}
+</script></body>
 </html>
