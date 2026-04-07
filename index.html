@@ -1,70 +1,13 @@
-<!DOCTYPE html>  
-<html>  
-<head>  
-  <title>WhatsApp Redirect</title>  
-  <script>  
-    function redirectWhatsApp() {  
-
-      var numbers = [  
-        "917878292397",
-        "919611671309",
-        "918867156533",
-        "917369882651",
-        "919493554782",
-        "919395205896",
-        "918792708734",
-        "918904367396",
-        "918178543793",
-        "919956426025",
-        "919973698957",
-        "919104657300",
-        "919799660579",
-        "918088789273",
-        "919652753733",
-        "917019018962",
-        "916002714150",
-        "919944640799",
-        "919603821127",
-        "917739279074",
-        "919866463895",
-        "917829532698",
-        "919100386009",
-        "919129157183",
-        "919724489634",
-        "918950060887",
-        "919566725140",
-        "919625811438",
-        "919686093225",
-        "917997519968",
-        "919623507870",
-        "918753042032",
-        "919596558577",
-        "919258548493",
-        "917379250933",
-        "918628826373",
-        "919915986052",
-        "917409063917",
-        "916203383701",
-        "917517986538"
-      ];  
-
-      var savedNumber = localStorage.getItem("selectedNumber");  
-
-      if (!savedNumber) {  
-        savedNumber = numbers[Math.floor(Math.random() * numbers.length)];  
-        localStorage.setItem("selectedNumber", savedNumber);  
-      }  
-
-      var message = "Hello! Would you like to know more about our positions?";  
-      var url = "https://wa.me/" + savedNumber + "?text=" + encodeURIComponent(message);  
-
-      window.location.href = url;  
-    }  
-  </script>  
-</head>  
-
-<body>  
-  <h2>WhatsApp पर Redirect करने के लिए नीचे क्लिक करें</h2>  
-  <button onclick="redirectWhatsApp()">Redirect to WhatsApp</button>  
-</body>  
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirecting…</title>
+  <script>
+    window.onload = function() {
+      window.location.href = "https://t.me/+Y0KVpWU6hXgyNDNl";
+    };
+  </script>
+</head>
+<body>
+</body>
 </html>
