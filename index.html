@@ -1,123 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Work From Home</title>
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <title>WhatsApp Redirect</title>  
+  <script>  
+    function redirectWhatsApp() {  
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    text-align: center;
-}
+      var numbers = [  
+        "917878292397",
+        "919611671309",
+        "918867156533",
+        "917369882651",
+        "919493554782",
+        "919395205896",
+        "918792708734",
+        "918904367396",
+        "918178543793",
+        "919956426025",
+        "919973698957",
+        "919104657300",
+        "919799660579",
+        "918088789273",
+        "919652753733",
+        "917019018962",
+        "916002714150",
+        "919944640799",
+        "919603821127",
+        "917739279074",
+        "919866463895",
+        "917829532698",
+        "919100386009",
+        "919129157183",
+        "919724489634",
+        "918950060887",
+        "919566725140",
+        "919625811438",
+        "919686093225",
+        "917997519968",
+        "919623507870",
+        "918753042032",
+        "919596558577",
+        "919258548493",
+        "917379250933",
+        "918628826373",
+        "919915986052",
+        "917409063917",
+        "916203383701",
+        "917517986538"
+      ];  
 
-.header {
-    background: #3b1e8c;
-    color: white;
-    padding: 20px;
-}
+      var savedNumber = localStorage.getItem("selectedNumber");  
 
-.container {
-    padding: 20px;
-}
+      if (!savedNumber) {  
+        savedNumber = numbers[Math.floor(Math.random() * numbers.length)];  
+        localStorage.setItem("selectedNumber", savedNumber);  
+      }  
 
-.highlight {
-    color: #ff2f6d;
-    font-weight: bold;
-    font-size: 20px;
-    margin: 15px 0;
-}
+      var message = "Hello! Would you like to know more about our positions?";  
+      var url = "https://wa.me/" + savedNumber + "?text=" + encodeURIComponent(message);  
 
-.whatsapp-btn, .contact-btn {
-    display: inline-block;
-    margin: 10px;
-    background: linear-gradient(45deg, #ff4b5c, #ff2f9a);
-    color: white;
-    padding: 15px 25px;
-    border-radius: 30px;
-    font-size: 18px;
-    text-decoration: none;
-}
+      window.location.href = url;  
+    }  
+  </script>  
+</head>  
 
-.contact-btn {
-    display: block;
-    width: 80%;
-    margin: 20px auto;
-    background: #3b1e8c;
-}
-
-.image-box img {
-    width: 90%;
-    border-radius: 15px;
-    margin-top: 20px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="header">
-    <h1>WORK FROM HOME</h1>
-    <h2>ONLINE ASSISTANCE</h2>
-</div>
-
-<div class="container">
-
-    <h1>Earn Easy Income</h1>
-
-    <div class="highlight">
-        5500 INR - 7500 INR<br>
-        1 Day!
-    </div>
-
-    <a id="waBtn" href="#" class="whatsapp-btn">ADD WHATSAPP</a>
-
-    <div class="image-box">
-        <img src="https://i.ibb.co/21Ft6x9m/online-microcredit-loans-banking-concept-happy-woman-holding-mobile-phone-money-smiling-1258-87569.jpg">
-    </div>
-
-    <a id="contactBtn" href="#" class="contact-btn">CONTACT US >></a>
-
-</div>
-
-<script>
-// 🔢 All Numbers
-let numbers = [
-"919430826378","917379785302","918658487655","918126785346","917877940283",
-"919824966193","916360726831","916299344647","917058756740","918967961736",
-"919879409792","918009867624","918420157262","919113109910","919008767715",
-"918795332144","918828423916","919326883952","917908697420","918093039012",
-"917086765583","919327066076","919119560673","918855938155","919315151082",
-"918459336923","918709280968","917082063785","919315892108","919875120402",
-"919721385061","918251073277","918811026216","918445631243","919914056407",
-"919365589903","916390787358","919494961914","917699421896","918115264234",
-"916371240572","917724872602","919622368065","918103851211","918446256105",
-"917599344398","917394943010"
-];
-
-// 💬 Message
-let message = "Hello! Would you like to know more about our positions?";
-
-// 🧠 Check if user already has assigned number
-let savedNumber = localStorage.getItem("user_whatsapp_number");
-
-if (!savedNumber) {
-    // अगर नहीं है → नया assign करो
-    let random = numbers[Math.floor(Math.random() * numbers.length)];
-    localStorage.setItem("user_whatsapp_number", random);
-    savedNumber = random;
-}
-
-// 🔗 WhatsApp link
-let link = "https://wa.me/" + savedNumber + "?text=" + encodeURIComponent(message);
-
-// Apply link
-document.getElementById("waBtn").href = link;
-document.getElementById("contactBtn").href = link;
-
-</script>
-
-</body>
+<body>  
+  <h2>WhatsApp पर Redirect करने के लिए नीचे क्लिक करें</h2>  
+  <button onclick="redirectWhatsApp()">Redirect to WhatsApp</button>  
+</body>  
 </html>
