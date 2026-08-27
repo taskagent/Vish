@@ -1,888 +1,328 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GameZone - All Games</title>
+<title>Boss Game - Official App</title>
 
 <style>
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial,Helvetica,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-  background:#f5f5f5;
-  color:#222;
+    background:#06110b;
+    color:#fff;
 }
 
-/* ================= TOP BAR ================= */
+.wrapper{
+    max-width:480px;
+    margin:auto;
+    min-height:100vh;
+    background:
+    radial-gradient(circle at top,#123d25 0,#06110b 48%);
+    padding-bottom:30px;
+}
 
+/* TOP */
 .top{
-  height:64px;
-  background:linear-gradient(135deg,#174c78,#0b2947);
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 12px;
+    padding:18px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .brand{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  font-size:19px;
-  font-weight:bold;
-}
-
-.logo{
-  width:38px;
-  height:38px;
-  border-radius:10px;
-  background:linear-gradient(145deg,#7de000,#08751f);
-  display:grid;
-  place-items:center;
-  font-weight:900;
-  box-shadow:0 2px 8px #0005;
-}
-
-.join{
-  background:#27a9e8;
-  padding:8px 12px;
-  border-radius:20px;
-  font-size:12px;
-  font-weight:bold;
+    font-size:25px;
+    font-weight:900;
+    color:#35f47c;
 }
 
 .menu{
-  font-weight:bold;
-  font-size:14px;
+    font-size:25px;
 }
 
-/* ================= NAV ================= */
-
-nav{
-  display:flex;
-  background:white;
-  box-shadow:0 2px 7px #0002;
-  overflow-x:auto;
-}
-
-nav a{
-  min-width:90px;
-  height:52px;
-  display:grid;
-  place-items:center;
-  text-decoration:none;
-  color:#111;
-  font-weight:bold;
-  border-right:1px solid #ddd;
-}
-
-nav a.active{
-  background:#12617d;
-  color:white;
-}
-
-/* ================= HERO ================= */
-
+/* HERO */
 .hero{
-  min-height:250px;
-  padding:28px 18px;
-  color:white;
-  background:
-    radial-gradient(
-      circle at 80% 20%,
-      #a7ff3f55,
-      transparent 25%
-    ),
-    linear-gradient(
-      135deg,
-      #063b13,
-      #0a6b23 50%,
-      #012d0c
-    );
-  position:relative;
-  overflow:hidden;
+    text-align:center;
+    padding:15px 20px 30px;
 }
 
-.hero::after{
-  content:"♠ ♥ ♦ ♣";
-  position:absolute;
-  right:-10px;
-  bottom:20px;
-  font-size:70px;
-  color:#fff2;
-  letter-spacing:8px;
+.app-icon{
+    width:105px;
+    height:105px;
+    margin:10px auto 18px;
+    border-radius:25px;
+    background:linear-gradient(145deg,#3cff83,#0b7d39);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    font-weight:900;
+    color:#032b12;
+    border:3px solid #5cff96;
+    box-shadow:0 0 35px rgba(38,255,119,.3);
 }
 
-.hero h1{
-  font-size:40px;
-  color:#ffd900;
-  text-shadow:2px 3px 4px #000;
+h1{
+    font-size:38px;
+    margin-bottom:8px;
 }
 
-.hero h2{
-  font-size:24px;
-  margin:8px 0;
+.green{
+    color:#36f47c;
 }
 
-.hero p{
-  max-width:560px;
-  line-height:1.5;
-  color:#e5ffe7;
-}
-
-.hero a{
-  display:inline-block;
-  margin-top:18px;
-  padding:12px 22px;
-  border-radius:8px;
-  background:linear-gradient(#fff400,#ffad00);
-  color:#111;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 4px 10px #0005;
-}
-
-/* ================= FEATURED ================= */
-
-.featured{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-  max-width:1100px;
-  margin:auto;
-  padding:22px 12px;
-}
-
-.card{
-  background:white;
-  border-radius:18px;
-  padding:15px 10px;
-  text-align:center;
-  box-shadow:0 4px 15px #0002;
-  transition:.25s;
-}
-
-.card:hover{
-  transform:translateY(-4px);
-}
-
-.icon{
-  width:92px;
-  height:92px;
-  margin:auto;
-  border-radius:23px;
-  background:linear-gradient(145deg,#39c529,#075c1b);
-  border:3px solid #65d94e;
-  display:grid;
-  place-items:center;
-  color:#ffd21a;
-  font-size:24px;
-  font-weight:900;
-  text-shadow:2px 2px #222;
-  box-shadow:0 5px 10px #0003;
-}
-
-.card h3{
-  margin-top:12px;
-  font-size:18px;
-}
-
-.stars{
-  color:#ffbf00;
-  font-size:19px;
-  margin:6px;
-}
-
-.verify{
-  color:#666;
-  font-size:13px;
-}
-
-.btn{
-  display:block;
-  margin-top:13px;
-  padding:11px;
-  border-radius:9px;
-  background:linear-gradient(135deg,#ff3030,#e60000);
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-/* ================= SEARCH ================= */
-
-.searchbox{
-  max-width:1100px;
-  margin:auto;
-  padding:0 12px 15px;
-}
-
-.search{
-  width:100%;
-  padding:15px 18px;
-  border:1px solid #bbb;
-  border-radius:12px;
-  font-size:16px;
-  background:#eef1ff;
-  outline:none;
-}
-
-.search:focus{
-  border-color:#2861b5;
-}
-
-/* ================= TABS ================= */
-
-.tabs{
-  max-width:1100px;
-  margin:auto;
-  padding:0 12px;
-  display:flex;
-}
-
-.tab{
-  flex:1;
-  padding:15px;
-  border:0;
-  font-size:16px;
-  background:#eee;
-  cursor:pointer;
-}
-
-.tab.active{
-  background:#2454a6;
-  color:white;
-}
-
-/* ================= APP LIST ================= */
-
-.list{
-  max-width:1100px;
-  margin:auto;
-  padding:14px 12px 35px;
-}
-
-.item{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  background:white;
-  margin-bottom:10px;
-  padding:12px;
-  border-radius:12px;
-  box-shadow:0 2px 8px #0001;
-}
-
-.small{
-  width:60px;
-  height:60px;
-  min-width:60px;
-  border-radius:15px;
-  background:linear-gradient(145deg,#35bb31,#08701d);
-  display:grid;
-  place-items:center;
-  color:#ffd21a;
-  font-weight:900;
-  font-size:15px;
-  text-shadow:1px 1px #222;
-}
-
-.info{
-  flex:1;
-}
-
-.info h3{
-  font-size:18px;
-}
-
-.info p{
-  margin-top:4px;
-  color:#555;
-  font-size:13px;
-}
-
-.safe{
-  color:#16821d !important;
-}
-
-.listbtn{
-  padding:11px 14px;
-  border-radius:8px;
-  background:linear-gradient(135deg,#5667ff,#35b8ee);
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:13px;
-  white-space:nowrap;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  background:#102c47;
-  color:white;
-  text-align:center;
-  padding:25px 15px;
-  line-height:1.7;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:700px){
-
-  .top{
-    height:62px;
-    padding:0 9px;
-  }
-
-  .brand{
-    font-size:17px;
-  }
-
-  .logo{
-    width:35px;
-    height:35px;
-    font-size:13px;
-  }
-
-  .join{
-    font-size:11px;
-    padding:7px 9px;
-  }
-
-  .menu{
-    font-size:12px;
-  }
-
-  nav a{
-    min-width:90px;
-    font-size:13px;
-  }
-
-  .hero{
-    min-height:235px;
-  }
-
-  .hero h1{
-    font-size:34px;
-  }
-
-  .hero h2{
-    font-size:21px;
-  }
-
-  .featured{
-    grid-template-columns:repeat(3,1fr);
-    gap:8px;
-    padding:18px 7px;
-  }
-
-  .card{
-    padding:11px 5px;
-  }
-
-  .icon{
-    width:70px;
-    height:70px;
-    border-radius:18px;
-    font-size:16px;
-  }
-
-  .card h3{
-    font-size:14px;
-  }
-
-  .stars{
+.tagline{
+    color:#a9b8ae;
     font-size:15px;
-  }
+    line-height:1.5;
+}
 
-  .verify{
+/* DOWNLOAD */
+.download{
+    display:block;
+    margin:22px auto 12px;
+    padding:17px 20px;
+    width:92%;
+    border-radius:12px;
+    background:linear-gradient(90deg,#27d968,#42ff88);
+    color:#03150a;
+    text-decoration:none;
+    font-size:19px;
+    font-weight:900;
+    box-shadow:0 8px 25px rgba(34,231,106,.25);
+}
+
+.download:hover{
+    transform:scale(1.02);
+}
+
+/* SECOND BUTTON */
+.more{
+    display:block;
+    width:92%;
+    margin:auto;
+    padding:14px;
+    border:1px solid #245c39;
+    border-radius:12px;
+    color:#d9ffe5;
+    text-decoration:none;
+    font-weight:bold;
+    background:#0b1c12;
+}
+
+/* STATS */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    padding:0 18px;
+    margin-top:15px;
+}
+
+.stat{
+    background:#0c1d13;
+    border:1px solid #193b27;
+    border-radius:15px;
+    padding:17px 5px;
+    text-align:center;
+}
+
+.stat b{
+    display:block;
+    color:#3df77f;
+    font-size:20px;
+}
+
+.stat span{
+    display:block;
+    color:#8ea096;
     font-size:11px;
-  }
+    margin-top:5px;
+}
 
-  .btn{
+/* CONTENT */
+.section{
+    padding:22px 20px 0;
+}
+
+.section h2{
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.section p{
+    color:#aab8ae;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:15px;
+}
+
+.feature{
+    background:#0c1d13;
+    border:1px solid #193b27;
+    border-radius:15px;
+    padding:18px 12px;
+}
+
+.feature-icon{
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.feature b{
+    display:block;
+    margin-bottom:6px;
+}
+
+.feature span{
+    color:#91a198;
     font-size:12px;
-    padding:9px 3px;
-  }
+    line-height:1.5;
+}
 
-  .item{
-    padding:10px 7px;
-  }
-
-  .small{
-    width:52px;
-    height:52px;
-    min-width:52px;
+/* NOTICE */
+.notice{
+    margin:22px 20px;
+    padding:15px;
+    border-radius:13px;
+    background:#0c2114;
+    border-left:4px solid #36f47c;
+    color:#b7c8bc;
     font-size:12px;
-  }
+    line-height:1.6;
+}
 
-  .info h3{
-    font-size:16px;
-  }
-
-  .info p{
-    font-size:12px;
-  }
-
-  .listbtn{
-    padding:9px 10px;
-    font-size:12px;
-  }
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    color:#65736b;
+    font-size:11px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- TOP HEADER -->
+<div class="wrapper">
 
-<header class="top">
-
-  <div class="brand">
-    <div class="logo">GZ</div>
-    <span>GAMEZONE</span>
-  </div>
-
-  <div class="join">
-    ✈ Join Us
-  </div>
-
-  <div class="menu">
-    ☰ Menu
-  </div>
-
-</header>
-
-
-<!-- NAVIGATION -->
-
-<nav>
-
-  <a href="#" class="active">
-    ⌂ Home
-  </a>
-
-  <a href="#apps">
-    ▣ Games
-  </a>
-
-  <a href="#policy">
-    ⚠ Policy
-  </a>
-
-  <a href="#blog">
-    ▤ Blog
-  </a>
-
-  <a href="#contact">
-    ☎ Contact
-  </a>
-
-</nav>
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-  <h1>GAME ZONE</h1>
-
-  <h2>Discover Fun Games</h2>
-
-  <p>
-    Explore casual games and entertainment apps
-    in one simple, mobile-friendly directory.
-  </p>
-
-  <a href="#apps">
-    EXPLORE GAMES
-  </a>
-
-</section>
-
-
-<!-- FEATURED GAMES -->
-
-<section class="featured">
-
-  <div class="card">
-
-    <div class="icon">
-      CARD
+    <div class="top">
+        <div class="brand">BOSS GAME</div>
+        <div class="menu">☰</div>
     </div>
 
-    <h3>
-      Card Master
-    </h3>
+    <div class="hero">
 
-    <div class="stars">
-      ★★★★★
+        <div class="app-icon">
+            BOSS
+        </div>
+
+        <h1>
+            Boss <span class="green">Game</span>
+        </h1>
+
+        <p class="tagline">
+            Experience a fast, smooth and modern gaming app.
+            Download the latest version and start playing.
+        </p>
+
+        <!-- DOWNLOAD LINK YAHAN LAGANA HAI -->
+        <a
+            class="download"
+            href="YOUR_SAFE_GAME_DOWNLOAD_LINK"
+            target="_blank"
+            rel="noopener">
+            ⬇ DOWNLOAD GAME
+        </a>
+
+        <a
+            class="more"
+            href="https://d1bjlwgcobo9al.cloudfront.net/223/20359548/bossrummy_9HFZF9MSXQ7.apk">
+            ★ Explore Features
+        </a>
+
     </div>
 
-    <div class="verify">
-      ✔ Verified App
+    <div class="stats">
+
+        <div class="stat">
+            <b>Fast</b>
+            <span>Performance</span>
+        </div>
+
+        <div class="stat">
+            <b>24/7</b>
+            <span>Available</span>
+        </div>
+
+        <div class="stat">
+            <b>Android</b>
+            <span>Supported</span>
+        </div>
+
     </div>
 
-    <a class="btn" href="#">
-      ⬇ Download
-    </a>
+    <div class="section" id="features">
 
-  </div>
+        <h2>Why Choose <span class="green">Boss Game?</span></h2>
 
+        <p>
+            Enjoy a clean interface, smooth navigation and
+            an optimized gaming experience on your mobile device.
+        </p>
 
-  <div class="card">
+        <div class="features">
 
-    <div class="icon">
-      SPIN
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <b>Fast & Smooth</b>
+                <span>Optimized interface for a smooth experience.</span>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <b>Mobile Friendly</b>
+                <span>Designed for Android mobile screens.</span>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🎮</div>
+                <b>Fun Games</b>
+                <span>Explore exciting casual gaming experiences.</span>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔄</div>
+                <b>Latest Version</b>
+                <span>Keep your app updated with the latest release.</span>
+            </div>
+
+        </div>
+
     </div>
 
-    <h3>
-      Spin Fun
-    </h3>
-
-    <div class="stars">
-      ★★★★★
+    <div class="notice">
+        ⚠️ Download apps only from sources you trust and review
+        the app's permissions before installing.
     </div>
 
-    <div class="verify">
-      ✔ Verified App
-    </div>
-
-    <a class="btn" href="#">
-      ⬇ Download
-    </a>
-
-  </div>
-
-
-  <div class="card">
-
-    <div class="icon">
-      PLAY
-    </div>
-
-    <h3>
-      Play Hub
-    </h3>
-
-    <div class="stars">
-      ★★★★☆
-    </div>
-
-    <div class="verify">
-      ✔ Verified App
-    </div>
-
-    <a class="btn" href="#">
-      ⬇ Download
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- SEARCH -->
-
-<div class="searchbox">
-
-  <input
-    id="search"
-    class="search"
-    type="text"
-    placeholder="🔍 Search All Games Here..."
-    oninput="searchApps()"
-  >
+    <footer>
+        © 2026 Boss Game. All Rights Reserved.
+    </footer>
 
 </div>
-
-
-<!-- TABS -->
-
-<div class="tabs">
-
-  <button
-    class="tab active"
-    onclick="showTab('all',this)">
-    All Games
-  </button>
-
-  <button
-    class="tab"
-    onclick="showTab('new',this)">
-    New Games
-  </button>
-
-</div>
-
-
-<!-- GAME LIST -->
-
-<section class="list" id="apps">
-
-
-  <div
-    class="item app"
-    data-type="new">
-
-    <div class="small">
-      CARD
-    </div>
-
-    <div class="info">
-
-      <h3>
-        Card Master
-      </h3>
-
-      <p>
-        Casual card game
-      </p>
-
-      <p class="safe">
-        ✔ Safe & Verified
-      </p>
-
-    </div>
-
-    <a
-      class="listbtn"
-      href="#">
-      ➡ Download
-    </a>
-
-  </div>
-
-
-  <div
-    class="item app"
-    data-type="all">
-
-    <div class="small">
-      SPIN
-    </div>
-
-    <div class="info">
-
-      <h3>
-        Spin Fun
-      </h3>
-
-      <p>
-        Arcade entertainment
-      </p>
-
-      <p class="safe">
-        ✔ Safe & Verified
-      </p>
-
-    </div>
-
-    <a
-      class="listbtn"
-      href="#">
-      ➡ Download
-    </a>
-
-  </div>
-
-
-  <div
-    class="item app"
-    data-type="new">
-
-    <div class="small">
-      PLAY
-    </div>
-
-    <div class="info">
-
-      <h3>
-        Play Hub
-      </h3>
-
-      <p>
-        Fun mini games
-      </p>
-
-      <p class="safe">
-        ✔ Safe & Verified
-      </p>
-
-    </div>
-
-    <a
-      class="listbtn"
-      href="#">
-      ➡ Download
-    </a>
-
-  </div>
-
-
-  <div
-    class="item app"
-    data-type="all">
-
-    <div class="small">
-      RACE
-    </div>
-
-    <div class="info">
-
-      <h3>
-        Race Drive
-      </h3>
-
-      <p>
-        Casual racing game
-      </p>
-
-      <p class="safe">
-        ✔ Safe & Verified
-      </p>
-
-    </div>
-
-    <a
-      class="listbtn"
-      href="#">
-      ➡ Download
-    </a>
-
-  </div>
-
-
-  <div
-    class="item app"
-    data-type="all">
-
-    <div class="small">
-      PUZZ
-    </div>
-
-    <div class="info">
-
-      <h3>
-        Puzzle Box
-      </h3>
-
-      <p>
-        Brain puzzle game
-      </p>
-
-      <p class="safe">
-        ✔ Safe & Verified
-      </p>
-
-    </div>
-
-    <a
-      class="listbtn"
-      href="#">
-      ➡ Download
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer id="contact">
-
-  <h2>
-    GAMEZONE
-  </h2>
-
-  <p>
-    Discover fun and casual games.
-  </p>
-
-  <p>
-    © 2026 GameZone. All Rights Reserved.
-  </p>
-
-</footer>
-
-
-<!-- JAVASCRIPT -->
-
-<script>
-
-function searchApps(){
-
-  const query =
-    document
-      .getElementById("search")
-      .value
-      .toLowerCase();
-
-  document
-    .querySelectorAll(".app")
-    .forEach(function(app){
-
-      if(
-        app.innerText
-          .toLowerCase()
-          .includes(query)
-      ){
-
-        app.style.display="flex";
-
-      }else{
-
-        app.style.display="none";
-
-      }
-
-    });
-
-}
-
-
-function showTab(type,button){
-
-  document
-    .querySelectorAll(".tab")
-    .forEach(function(tab){
-
-      tab.classList.remove("active");
-
-    });
-
-  button.classList.add("active");
-
-  document
-    .querySelectorAll(".app")
-    .forEach(function(app){
-
-      if(
-        type==="all" ||
-        app.dataset.type===type
-      ){
-
-        app.style.display="flex";
-
-      }else{
-
-        app.style.display="none";
-
-      }
-
-    });
-
-}
-
-</script>
 
 </body>
   </html>
