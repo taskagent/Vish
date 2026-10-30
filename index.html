@@ -1,13 +1,183 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Redirecting…</title>
-  <script>
-    window.onload = function() {
-      window.location.href = "https://t.me/+ddNkoBUQBaQyNDI9";
-    };
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random WhatsApp Number</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg,#09090f,#251044);
+  font-family: Arial, sans-serif;
+  color: white;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  background: #171525;
+  padding: 30px 22px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid #60418a;
+  box-shadow: 0 10px 40px #0008;
+}
+
+h2 {
+  color: #d8a7ff;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #bbb;
+  font-size: 14px;
+}
+
+.number {
+  margin: 25px 0;
+  padding: 18px 8px;
+  background: #0c0b14;
+  border-radius: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #35e68a;
+  min-height: 60px;
+  overflow-wrap: anywhere;
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  background: #20c968;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(.97);
+}
+
+.footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #888;
+}
+</style>
 </head>
+
 <body>
+
+<div class="container">
+
+<h2>🎯 Random WhatsApp</h2>
+
+<p>Click below to get a random number</p>
+
+<div class="number" id="number">
+  Your Number Here
+</div>
+
+<button onclick="getRandomNumber()">
+  GET RANDOM NUMBER
+</button>
+
+<div class="footer">
+  Random Number Generator
+</div>
+
+</div>
+
+<script>
+
+const numbers = [
+"917082146420",
+"917406840743",
+"917416395103",
+"917629883641",
+"917654857404",
+"917760007872",
+"917760881385",
+"917780395667",
+"917794915046",
+"917995332901",
+"918015525465",
+"918073743548",
+"918295954372",
+"918296316538",
+"918296765733",
+"918341255186",
+"918491086141",
+"918658421932",
+"918722001726",
+"918790810745",
+"918867655361",
+"918890202959",
+"918892533725",
+"918951542164",
+"918971437880",
+"918971554911",
+"919032227757",
+"919059694641",
+"919061275113",
+"919108029445",
+"919341825193",
+"919443324480",
+"919535108949",
+"919535175150",
+"919550143620",
+"919553859329",
+"919591868045",
+"919594229402",
+"919603189887",
+"919618826858",
+"919652886082",
+"919663857681",
+"919676950659",
+"919688672377",
+"919703443362",
+"919822486889",
+"919908773985",
+"919951148184",
+"919951723798",
+"919955219916",
+"919963934362",
+"919964838988",
+"919976641992",
+"919978061100",
+"919985752850"
+];
+
+function getRandomNumber() {
+
+  const randomIndex = Math.floor(
+    Math.random() * numbers.length
+  );
+
+  const selectedNumber = numbers[randomIndex];
+
+  document.getElementById("number").innerText =
+    "+" + selectedNumber;
+
+  window.location.href =
+    "https://wa.me/" + selectedNumber;
+}
+
+</script>
+
 </body>
 </html>
